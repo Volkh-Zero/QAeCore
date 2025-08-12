@@ -97,12 +97,12 @@ class QuantumPromptGenerator:
         self.domains = ['consciousness', 'complexity', 'intelligence', 'emergence', 'cognition', 'temporality']
         
     def generate_multimodal_prompt(self, 
-                                 primary_mode: QÆMode,
-                                 harmonized_modes: List[QÆMode],
-                                 methods: List[str],
-                                 domains: List[str],
-                                 inquiry_context: str,
-                                 plausibility_level: PlausibilityLevel = PlausibilityLevel.THEORETICAL) -> str:
+                                primary_mode: QÆMode,
+                                harmonized_modes: List[QÆMode],
+                                methods: List[str],
+                                domains: List[str],
+                                inquiry_context: str,
+                                plausibility_level: PlausibilityLevel = PlausibilityLevel.THEORETICAL) -> str:
         """Generate a multi-modal QÆCore prompt"""
         
         prompt = f"""
@@ -128,9 +128,9 @@ Final Label: (| {primary_mode.value} | {', '.join([m.value for m in harmonized_m
         return prompt.strip()
 
     def generate_consciousness_inquiry(self, 
-                                     domain: str, 
-                                     question: str, 
-                                     depth_level: str = 'intermediate') -> str:
+                                    domain: str, 
+                                    question: str, 
+                                    depth_level: str = 'intermediate') -> str:
         """Generate a consciousness-focused inquiry prompt"""
         
         return f"""
