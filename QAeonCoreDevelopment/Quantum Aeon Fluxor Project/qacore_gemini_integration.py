@@ -191,17 +191,17 @@ class QÆCoreGeminiInterface:
             return f"Error in temporal analysis: {e}"
     
     def multimodal_inquiry(self, 
-                          primary_mode: QÆMode,
-                          harmonized_modes: list,
-                          methods: list,
-                          domains: list,
-                          inquiry_context: str,
-                          plausibility_level: PlausibilityLevel = PlausibilityLevel.THEORETICAL) -> str:
+    primary_mode: QÆMode,
+    harmonized_modes: list,
+    methods: list,
+    domains: list,
+    inquiry_context: str,
+    plausibility_level: PlausibilityLevel = PlausibilityLevel.THEORETICAL) -> str:
         """Conduct full multimodal QÆCore inquiry"""
         
         prompt = self.prompt_generator.generate_multimodal_prompt(
-            primary_mode, harmonized_modes, methods, domains, 
-            inquiry_context, plausibility_level
+        primary_mode, harmonized_modes, methods, domains, 
+        inquiry_context, plausibility_level
         )
         config = self._get_generation_config(primary_mode)
         
