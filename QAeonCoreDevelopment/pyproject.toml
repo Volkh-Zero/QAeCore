@@ -1,0 +1,35 @@
+[project]
+name = "quantum-aeon-fluxor"
+version = "0.1.0"
+description = "An advanced AI research project exploring consciousness and complex systems."
+requires-python = ">=3.10"
+dependencies = [
+    "google-generativeai>=0.4.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "ruff",
+    "black",
+]
+
+[project.scripts]
+qaf-cli = "Quantum_Aeon_Fluxor_Project.main:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+dev-dependencies = [
+    "pytest",
+    "ruff",
+    "black",
+]
+
+[tool.ruff]
+line-length = 100
+
+[tool.black]
+line-length = 100
