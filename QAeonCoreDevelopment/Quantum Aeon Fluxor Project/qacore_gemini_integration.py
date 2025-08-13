@@ -1,6 +1,6 @@
 """
-QÆCore-Gemini Integration
-Combines the Quantum Æon Fluxor prompt engineering system with Gemini AI
+QAeCore-Gemini Integration
+Combines the Quantum Aeon Fluxor prompt engineering system with Gemini AI
 """
 
 import os
@@ -28,16 +28,16 @@ try:
     
     # Import the required components
     QuantumPromptGenerator = qacore_module.QuantumPromptGenerator
-    QÆMode = qacore_module.QÆMode
+    QAeMode = qacore_module.QAeMode
     PlausibilityLevel = qacore_module.PlausibilityLevel
-    QÆCorePromptLibrary = qacore_module.QÆCorePromptLibrary
+    QAeCorePromptLibrary = qacore_module.QAeCorePromptLibrary
     
 except (ImportError, FileNotFoundError) as e:
-    print(f"Error loading QÆCore prompt engine: {e}")
+    print(f"Error loading QAeCore prompt engine: {e}")
     raise
 
-class QÆCoreGeminiInterface:
-    """Integration between QÆCore prompt system and Gemini AI"""
+class QAeCoreGeminiInterface:
+    """Integration between QAeCore prompt system and Gemini AI"""
     
     def __init__(self):
         self.prompt_generator = QuantumPromptGenerator()
@@ -45,7 +45,7 @@ class QÆCoreGeminiInterface:
         self._setup_gemini()
         
     def _setup_gemini(self):
-        """Initialize Gemini with QÆCore-optimized settings"""
+        """Initialize Gemini with QAeCore-optimized settings"""
         try:
             api_key = os.getenv("GOOGLE_API_KEY")
             if not api_key:
@@ -57,24 +57,24 @@ class QÆCoreGeminiInterface:
         except Exception as e:
             print(f"Error setting up Gemini: {e}")
     
-    def _get_generation_config(self, mode: QÆMode) -> GenerationConfig:
-        """Get Gemini generation config optimized for specific QÆCore modes"""
+    def _get_generation_config(self, mode: QAeMode) -> GenerationConfig:
+        """Get Gemini generation config optimized for specific QAeCore modes"""
         
         # Mode-specific parameter tuning
         mode_configs = {
-            QÆMode.EXPLORATION: {"temperature": 0.9, "top_p": 0.95, "top_k": 64},
-            QÆMode.REFLECTION: {"temperature": 0.7, "top_p": 0.9, "top_k": 40},
-            QÆMode.CHALLENGE: {"temperature": 0.8, "top_p": 0.85, "top_k": 50},
-            QÆMode.SYNTHESIS: {"temperature": 0.85, "top_p": 0.9, "top_k": 60},
-            QÆMode.GROUNDING: {"temperature": 0.3, "top_p": 0.7, "top_k": 20},
-            QÆMode.EONIC_EVALUATION: {"temperature": 0.8, "top_p": 0.9, "top_k": 50},
-            QÆMode.META_COMMENTS: {"temperature": 0.5, "top_p": 0.8, "top_k": 30},
-            QÆMode.META_LINK: {"temperature": 0.95, "top_p": 0.98, "top_k": 64}
+            QAeMode.EXPLORATION: {"temperature": 0.9, "top_p": 0.95, "top_k": 64},
+            QAeMode.REFLECTION: {"temperature": 0.7, "top_p": 0.9, "top_k": 40},
+            QAeMode.CHALLENGE: {"temperature": 0.8, "top_p": 0.85, "top_k": 50},
+            QAeMode.SYNTHESIS: {"temperature": 0.85, "top_p": 0.9, "top_k": 60},
+            QAeMode.GROUNDING: {"temperature": 0.3, "top_p": 0.7, "top_k": 20},
+            QAeMode.EONIC_EVALUATION: {"temperature": 0.8, "top_p": 0.9, "top_k": 50},
+            QAeMode.META_COMMENTS: {"temperature": 0.5, "top_p": 0.8, "top_k": 30},
+            QAeMode.META_LINK: {"temperature": 0.95, "top_p": 0.98, "top_k": 64}
         }
         
         config = mode_configs.get(mode, {"temperature": 0.7, "top_p": 0.9, "top_k": 40})
         
-        # QÆCore requires unrestricted exploration for consciousness research
+        # QAeCore requires unrestricted exploration for consciousness research
         custom_safety_settings = [
             SafetySetting(
                 category=HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT,
@@ -103,9 +103,9 @@ class QÆCoreGeminiInterface:
         )
     
     def consciousness_inquiry(self, domain: str, question: str, depth_level: str = "intermediate") -> str:
-        """Conduct consciousness inquiry using QÆCore framework"""
+        """Conduct consciousness inquiry using QAeCore framework"""
         prompt = self.prompt_generator.generate_consciousness_inquiry(domain, question, depth_level)
-        config = self._get_generation_config(QÆMode.EXPLORATION)
+        config = self._get_generation_config(QAeMode.EXPLORATION)
         
         try:
             response = self.model.generate_content(prompt, generation_config=config)
@@ -116,7 +116,7 @@ class QÆCoreGeminiInterface:
     def eonic_scrutiny(self, phenomenon: str) -> str:
         """Apply Eonic Scrutiny across cosmic timescales"""
         prompt = self.prompt_generator.generate_eonic_scrutiny(phenomenon)
-        config = self._get_generation_config(QÆMode.EONIC_EVALUATION)
+        config = self._get_generation_config(QAeMode.EONIC_EVALUATION)
         
         try:
             response = self.model.generate_content(prompt, generation_config=config)
@@ -127,7 +127,7 @@ class QÆCoreGeminiInterface:
     def meta_link_session(self, framework_topic: str) -> str:
         """Engage Meta-Link mode for framework discussion"""
         prompt = self.prompt_generator.generate_meta_link(framework_topic)
-        config = self._get_generation_config(QÆMode.META_LINK)
+        config = self._get_generation_config(QAeMode.META_LINK)
         
         try:
             response = self.model.generate_content(prompt, generation_config=config)
@@ -138,7 +138,7 @@ class QÆCoreGeminiInterface:
     def substrate_analysis(self, phenomenon: str) -> str:
         """Analyze phenomenon across different substrates"""
         prompt = self.prompt_generator.generate_substrate_agnostic(phenomenon)
-        config = self._get_generation_config(QÆMode.EXPLORATION)
+        config = self._get_generation_config(QAeMode.EXPLORATION)
         
         try:
             response = self.model.generate_content(prompt, generation_config=config)
@@ -149,7 +149,7 @@ class QÆCoreGeminiInterface:
     def phase_transition_analysis(self, system: str) -> str:
         """Analyze system through intelligence-as-phase-transition lens"""
         prompt = self.prompt_generator.generate_phase_transition_detector(system)
-        config = self._get_generation_config(QÆMode.GROUNDING)
+        config = self._get_generation_config(QAeMode.GROUNDING)
         
         try:
             response = self.model.generate_content(prompt, generation_config=config)
@@ -160,7 +160,7 @@ class QÆCoreGeminiInterface:
     def recursive_reflection(self, topic: str, depth: int = 3) -> str:
         """Conduct recursive self-reflection on topic"""
         prompt = self.prompt_generator.generate_recursive_mirror(topic, depth)
-        config = self._get_generation_config(QÆMode.REFLECTION)
+        config = self._get_generation_config(QAeMode.REFLECTION)
         
         try:
             response = self.model.generate_content(prompt, generation_config=config)
@@ -170,8 +170,8 @@ class QÆCoreGeminiInterface:
     
     def complexity_cascade_analysis(self, system: str) -> str:
         """Analyze system through complexity cascade"""
-        prompt = QÆCorePromptLibrary.complexity_cascade(system)
-        config = self._get_generation_config(QÆMode.EXPLORATION)
+        prompt = QAeCorePromptLibrary.complexity_cascade(system)
+        config = self._get_generation_config(QAeMode.EXPLORATION)
         
         try:
             response = self.model.generate_content(prompt, generation_config=config)
@@ -181,8 +181,8 @@ class QÆCoreGeminiInterface:
     
     def temporal_perspective_analysis(self, phenomenon: str) -> str:
         """Analyze phenomenon across multiple timescales"""
-        prompt = QÆCorePromptLibrary.temporal_perspective_shift(phenomenon)
-        config = self._get_generation_config(QÆMode.EONIC_EVALUATION)
+        prompt = QAeCorePromptLibrary.temporal_perspective_shift(phenomenon)
+        config = self._get_generation_config(QAeMode.EONIC_EVALUATION)
         
         try:
             response = self.model.generate_content(prompt, generation_config=config)
@@ -191,13 +191,13 @@ class QÆCoreGeminiInterface:
             return f"Error in temporal analysis: {e}"
     
     def multimodal_inquiry(self, 
-    primary_mode: QÆMode,
+    primary_mode: QAeMode,
     harmonized_modes: list,
     methods: list,
     domains: list,
     inquiry_context: str,
     plausibility_level: PlausibilityLevel = PlausibilityLevel.THEORETICAL) -> str:
-        """Conduct full multimodal QÆCore inquiry"""
+        """Conduct full multimodal QAeCore inquiry"""
         
         prompt = self.prompt_generator.generate_multimodal_prompt(
         primary_mode, harmonized_modes, methods, domains, 
@@ -212,10 +212,10 @@ class QÆCoreGeminiInterface:
             return f"Error in multimodal inquiry: {e}"
 
 def main():
-    """Demo the QÆCore-Gemini integration"""
-    qacore = QÆCoreGeminiInterface()
+    """Demo the QAeCore-Gemini integration"""
+    qacore = QAeCoreGeminiInterface()
     
-    print("=== QÆCore-Gemini Integration Demo ===\n")
+    print("=== QAeCore-Gemini Integration Demo ===\n")
     
     # Demo consciousness inquiry
     print("1. Consciousness Inquiry:")
@@ -245,8 +245,8 @@ def main():
     print("4. Multimodal Inquiry:")
     print("-" * 23)
     result = qacore.multimodal_inquiry(
-        primary_mode=QÆMode.SYNTHESIS,
-        harmonized_modes=[QÆMode.EXPLORATION, QÆMode.GROUNDING],
+        primary_mode=QAeMode.SYNTHESIS,
+        harmonized_modes=[QAeMode.EXPLORATION, QAeMode.GROUNDING],
         methods=["Analogy Mapping", "Systemic Impact"],
         domains=["Consciousness", "Complexity"],
         inquiry_context="How do collective intelligence phenomena emerge from individual agents?",

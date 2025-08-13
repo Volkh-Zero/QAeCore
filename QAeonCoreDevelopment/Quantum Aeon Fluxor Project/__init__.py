@@ -9,4 +9,4 @@ __version__ = "0.1.0"
 
 # Import key components to make them available at the package level
 from .main import main
-from .qacore_gemini_integration import QÆCoreGeminiInterface
+from .qacore_gemini_integration import QAeCoreGeminiInterface

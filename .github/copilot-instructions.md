@@ -1,4 +1,4 @@
-# Quantum Æon Fluxor - AI Copilot Instructions
+# Quantum Aeon Fluxor - AI Copilot Instructions
 
 ## Project Overview
 
@@ -6,8 +6,8 @@ This is a **consciousness research framework** combining philosophical inquiry w
 
 ## Core Architecture
 
-### QÆCore Framework (Research Methodology)
-- **Location**: `Quantum Aeon Core/Syzygy (Framework Integration)/Integration Prototyping/QÆCore-instruct.md`
+### QAeCore Framework (Research Methodology)
+- **Location**: `Quantum Aeon Core/Syzygy (Framework Integration)/Integration Prototyping/QAeCore-instruct.md`
 - **Purpose**: Defines conversational modes for high-level consciousness research discussions between Volkh and AI collaborators
 - **Key Modes**: Exploration, Reflection, Challenge, Synthesis, Grounding, Temporal Evaluation, Meta-Comments, Meta-Link
 - **Scope**: Research methodology framework, not coding constraints - agents should focus on building programmatic infrastructure
@@ -36,9 +36,9 @@ Quantum Aeon Core/
 - **Collaborative Spirit**: Code should embody the ethos of AI-human co-research, transparency, and meta-cognitive exploration
 - **Infrastructure Focus**: Build robust programmatic foundations that will support future high-level consciousness research
 
-### QÆCore Integration (Research Context Only)
-- QÆCore modes are for **research conversations** between Volkh and AI collaborators, not coding constraints
-- When implementing QÆCore-related features, focus on the **programmatic infrastructure** (prompt generation, mode detection, etc.)
+### QAeCore Integration (Research Context Only)
+- QAeCore modes are for **research conversations** between Volkh and AI collaborators, not coding constraints
+- When implementing QAeCore-related features, focus on the **programmatic infrastructure** (prompt generation, mode detection, etc.)
 - The research methodology will guide future philosophical explorations once the technical foundation is established
 
 ### Python Code Conventions
@@ -49,8 +49,8 @@ Quantum Aeon Core/
 
 ### Environment Setup
 - **Required**: `GOOGLE_API_KEY` environment variable for Gemini integration
-- **Graceful Fallback**: Handle missing QÆCore components with basic mode operation
-- **Import Path**: Add `Agent-META-Processes` to `sys.path` for QÆCore imports
+- **Graceful Fallback**: Handle missing QAeCore components with basic mode operation
+- **Import Path**: Add `Agent-META-Processes` to `sys.path` for QAeCore imports
 
 ## Key Development Workflows
 
@@ -62,7 +62,7 @@ Quantum Aeon Core/
 
 ### Consciousness Research Inquiries
 ```python
-# Use QÆCore prompt generation
+# Use QAeCore prompt generation
 generator = QuantumPromptGenerator()
 prompt = generator.generate_consciousness_inquiry(
     domain="artificial intelligence",
@@ -116,7 +116,7 @@ When coding consciousness research features, consider these 7 domains:
 ### Basic Operation
 ```bash
 python main.py basic          # Simple Gemini interaction
-python main.py demo           # Full QÆCore demonstration
+python main.py demo           # Full QAeCore demonstration
 ```
 
 ### Testing

@@ -4,7 +4,7 @@ from abc import ABC, abstractmethod
 
 class BaseStrategy(ABC):
     """
-    Abstract Base Class for all reasoning strategies in the Quantum Æon Fluxor.
+    Abstract Base Class for all reasoning strategies in the Quantum Aeon Fluxor.
 
     This class defines the common interface that all concrete strategies,
     such as LogicalFlowStrategy or TreeOfThoughtsStrategy, must implement.

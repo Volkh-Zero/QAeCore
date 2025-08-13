@@ -1,7 +1,7 @@
 """
 Hermetic Engine - Persistent Data Management for Quantum Aeon Core.
 
-This package handles data persistence, storage, and retrieval for the QÆCore system,
+This package handles data persistence, storage, and retrieval for the QAeCore system,
 including knowledge bases, conversation history, and agent states.
 """
 

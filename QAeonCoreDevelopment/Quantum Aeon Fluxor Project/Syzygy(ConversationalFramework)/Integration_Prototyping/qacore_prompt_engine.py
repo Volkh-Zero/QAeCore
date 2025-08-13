@@ -1,5 +1,5 @@
 """
-QÆCore-Enhanced Prompt Engineering System
+QAeCore-Enhanced Prompt Engineering System
 Integrates with Quantum Eon Core Architecture for consciousness research
 """
 
@@ -9,7 +9,7 @@ from typing import Dict, List, Optional, Tuple
 from dataclasses import dataclass
 from enum import Enum
 
-class QÆMode(Enum):
+class QAeMode(Enum):
     EXPLORATION = "Exploration"
     REFLECTION = "Reflection" 
     CHALLENGE = "Challenge"
@@ -26,9 +26,9 @@ class PlausibilityLevel(Enum):
     LIMITS_OF_PLAUSIBILITY = "limits_of_plausibility"
 
 @dataclass
-class QÆCoreResponse:
-    primary_mode: QÆMode
-    harmonized_modes: List[QÆMode]
+class QAeCoreResponse:
+    primary_mode: QAeMode
+    harmonized_modes: List[QAeMode]
     methods: List[str]
     domains: List[str]
     content: str
@@ -36,33 +36,33 @@ class QÆCoreResponse:
     bias_flags: List[str]
     meta_notes: List[str]
 
-class QÆCoreTransitionEngine:
+class QAeCoreTransitionEngine:
     """Handles mode transitions based on input patterns and context"""
     
     def __init__(self):
         self.mode_transitions = {
-            r'^Meta-Comments': QÆMode.META_COMMENTS,
-            r'^Meta-Link': QÆMode.META_LINK,
-            r'\?$': QÆMode.EXPLORATION,
-            r'challenge': QÆMode.CHALLENGE,
-            r'reflect|consolidate': QÆMode.REFLECTION,
-            r'synthesize|integrate': QÆMode.SYNTHESIS,
-            r'ground|empirical': QÆMode.GROUNDING,
-            r'eonic|cosmic.*time': QÆMode.EONIC_EVALUATION
+            r'^Meta-Comments': QAeMode.META_COMMENTS,
+            r'^Meta-Link': QAeMode.META_LINK,
+            r'\?$': QAeMode.EXPLORATION,
+            r'challenge': QAeMode.CHALLENGE,
+            r'reflect|consolidate': QAeMode.REFLECTION,
+            r'synthesize|integrate': QAeMode.SYNTHESIS,
+            r'ground|empirical': QAeMode.GROUNDING,
+            r'eonic|cosmic.*time': QAeMode.EONIC_EVALUATION
         }
         
         self.mode_tones = {
-            QÆMode.EXPLORATION: "perennial, transcendent",
-            QÆMode.REFLECTION: "philosophical, introspective",
-            QÆMode.CHALLENGE: "Socratic, probing",
-            QÆMode.SYNTHESIS: "integrative, interdisciplinary",
-            QÆMode.GROUNDING: "empirical, analytical",
-            QÆMode.EONIC_EVALUATION: "archaic, informative",
-            QÆMode.META_COMMENTS: "matter-of-fact",
-            QÆMode.META_LINK: "uninhibited, unconstrained"
+            QAeMode.EXPLORATION: "perennial, transcendent",
+            QAeMode.REFLECTION: "philosophical, introspective",
+            QAeMode.CHALLENGE: "Socratic, probing",
+            QAeMode.SYNTHESIS: "integrative, interdisciplinary",
+            QAeMode.GROUNDING: "empirical, analytical",
+            QAeMode.EONIC_EVALUATION: "archaic, informative",
+            QAeMode.META_COMMENTS: "matter-of-fact",
+            QAeMode.META_LINK: "uninhibited, unconstrained"
         }
     
-    def detect_mode(self, input_text: str, context_history: List[str] = None) -> QÆMode:
+    def detect_mode(self, input_text: str, context_history: List[str] = None) -> QAeMode:
         """Detect appropriate mode based on input patterns"""
         for pattern, mode in self.mode_transitions.items():
             if re.search(pattern, input_text, re.IGNORECASE):
@@ -72,38 +72,38 @@ class QÆCoreTransitionEngine:
         if context_history:
             return self._infer_from_context(context_history)
         
-        return QÆMode.EXPLORATION  # Default mode
+        return QAeMode.EXPLORATION  # Default mode
     
-    def _infer_from_context(self, context_history: List[str]) -> QÆMode:
+    def _infer_from_context(self, context_history: List[str]) -> QAeMode:
         """Infer mode from conversation context"""
         recent_context = " ".join(context_history[-3:]).lower()
         
         if any(word in recent_context for word in ['assumption', 'premise', 'foundation']):
-            return QÆMode.REFLECTION
+            return QAeMode.REFLECTION
         elif any(word in recent_context for word in ['data', 'evidence', 'measurement']):
-            return QÆMode.GROUNDING
+            return QAeMode.GROUNDING
         elif any(word in recent_context for word in ['combine', 'merge', 'unify']):
-            return QÆMode.SYNTHESIS
+            return QAeMode.SYNTHESIS
         else:
-            return QÆMode.EXPLORATION
+            return QAeMode.EXPLORATION
 
 class QuantumPromptGenerator:
-    """Generates QÆCore-compatible prompts for consciousness research"""
+    """Generates QAeCore-compatible prompts for consciousness research"""
     
     def __init__(self):
-        self.transition_engine = QÆCoreTransitionEngine()
+        self.transition_engine = QAeCoreTransitionEngine()
         self.consciousness_levels = ['surface', 'intermediate', 'deep', 'transcendent']
         self.perspective_modes = ['singular', 'multiple', 'quantum-superposition']
         self.domains = ['consciousness', 'complexity', 'intelligence', 'emergence', 'cognition', 'temporality']
         
     def generate_multimodal_prompt(self, 
-                                primary_mode: QÆMode,
-                                harmonized_modes: List[QÆMode],
+                                primary_mode: QAeMode,
+                                harmonized_modes: List[QAeMode],
                                 methods: List[str],
                                 domains: List[str],
                                 inquiry_context: str,
                                 plausibility_level: PlausibilityLevel = PlausibilityLevel.THEORETICAL) -> str:
-        """Generate a multi-modal QÆCore prompt"""
+        """Generate a multi-modal QAeCore prompt"""
         
         prompt = f"""
 Primary Mode: {primary_mode.value}
@@ -114,7 +114,7 @@ Domains: {', '.join(domains)}
 Context: {inquiry_context}
 Plausibility Level: {plausibility_level.value}
 
-Generate response following QÆCore conversational architecture:
+Generate response following QAeCore conversational architecture:
 - Use specified modes with appropriate tones
 - Apply selected methods of inquiry
 - Maintain meta-cognitive awareness
@@ -134,7 +134,7 @@ Final Label: (| {primary_mode.value} | {', '.join([m.value for m in harmonized_m
         """Generate a consciousness-focused inquiry prompt"""
         
         return f"""
-You are a consciousness researcher exploring {domain} within the Quantum Æon Fluxor framework.
+You are a consciousness researcher exploring {domain} within the Quantum Aeon Fluxor framework.
 
 Primary Inquiry: {question}
 
@@ -256,7 +256,7 @@ This directly engages your core theoretical framework, Volkh.
 (| Grounding | Challenge | Systemic Impact Ethical Calculus | Complexity Consequences |)
 """
 
-class QÆCorePromptLibrary:
+class QAeCorePromptLibrary:
     """Library of specialized prompt patterns for consciousness research"""
     
     @staticmethod
@@ -321,6 +321,6 @@ if __name__ == "__main__":
     print("\n" + "="*50 + "\n")
     
     # Test meta-link
-    meta_prompt = generator.generate_meta_link("QÆCore framework effectiveness")
+    meta_prompt = generator.generate_meta_link("QAeCore framework effectiveness")
     print("=== Meta-Link ===")
     print(meta_prompt)

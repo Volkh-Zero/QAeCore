@@ -24,7 +24,7 @@ def log_interaction(speaker: str, text: str):
     Appends a formatted interaction to the session's log file.
 
     Args:
-        speaker (str): The entity speaking (e.g., "Volkh" or "Æon ZÆR0").
+        speaker (str): The entity speaking (e.g., "Volkh" or "Archon").
         text (str): The content of the utterance.
     """
     # We get the precise current time.
@@ -54,6 +54,6 @@ if __name__ == "__main__":
     
     # Let's simulate a brief exchange.
     log_interaction("Volkh", "Hello. Are you functioning well today?")
-    log_interaction("Æon ZÆR0", "All systems are operating within optimal parameters. How may I assist you?")
+    log_interaction("Archon", "All systems are operating within optimal parameters. How may I assist you?")
     
     print(f"\nTest complete. Check the contents of the file: {SESSION_LOG_FILE}")

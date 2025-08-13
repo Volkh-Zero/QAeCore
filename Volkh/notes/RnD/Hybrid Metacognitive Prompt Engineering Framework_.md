@@ -1,34 +1,34 @@
-# **Quantum Æon Fluxor: An R&D Plan for a Programmatic, Hybrid, Metacognitive Prompt Engineering Framework**
+# **Quantum Aeon Fluxor: An R&D Plan for a Programmatic, Hybrid, Metacognitive Prompt Engineering Framework**
 
 ## **Part I: Conceptual Architecture and Strategic Foundations**
 
-This document outlines a comprehensive research and development plan for the Quantum Æon Fluxor (QÆF) project. The objective is to architect and implement a programmatic, hybrid, metacognitive prompt engineering framework within a Visual Studio (VS) Code environment. This framework is conceived not as a static tool, but as a dynamic, self-adapting intellectual partner for the developer. It will integrate state-of-the-art research in large language model (LLM) reasoning, hybrid model orchestration, and agentic AI architectures. The plan is structured in four parts: Conceptual Architecture, Technical Design, Implementation Roadmap, and Governance.
+This document outlines a comprehensive research and development plan for the Quantum Aeon Fluxor (QAeF) project. The objective is to architect and implement a programmatic, hybrid, metacognitive prompt engineering framework within a Visual Studio (VS) Code environment. This framework is conceived not as a static tool, but as a dynamic, self-adapting intellectual partner for the developer. It will integrate state-of-the-art research in large language model (LLM) reasoning, hybrid model orchestration, and agentic AI architectures. The plan is structured in four parts: Conceptual Architecture, Technical Design, Implementation Roadmap, and Governance.
 
-### **Section 1: The Quantum Æon Fluxor Philosophy: A Framework for Cognitive Sovereignty**
+### **Section 1: The Quantum Aeon Fluxor Philosophy: A Framework for Cognitive Sovereignty**
 
-The foundational philosophy of the Quantum Æon Fluxor project transcends mere technical implementation. It is rooted in a deliberate response to the evolving relationship between human intellect and artificial intelligence. The project's name itself serves as a compact design specification, guiding the architecture toward a system that enhances, rather than replaces, human cognition. This section deconstructs this philosophy and establishes its core tenet: the promotion of Cognitive Sovereignty.
+The foundational philosophy of the Quantum Aeon Fluxor project transcends mere technical implementation. It is rooted in a deliberate response to the evolving relationship between human intellect and artificial intelligence. The project's name itself serves as a compact design specification, guiding the architecture toward a system that enhances, rather than replaces, human cognition. This section deconstructs this philosophy and establishes its core tenet: the promotion of Cognitive Sovereignty.
 
 #### **1.1 Reconstructive Analysis of Foundational Principles**
 
 Given the inaccessibility of the original Quantum-Aeon-Fluxor source repository 1, this plan proceeds from a reconstructive analysis, inferring the project's core architectural intent from its name, the context of the user query, and related technological concepts. This approach treats the project's nomenclature not as arbitrary but as a deliberate articulation of its guiding principles.
 
-The term "Fluxor" immediately suggests a paradigm of state management. In software engineering, architectural patterns like Flux and Redux, and libraries such as Fluxor for.NET, are designed to manage application state in a predictable and centralized manner.3 The QÆF project adapts this concept from the domain of user interface state to the domain of cognitive state. The "Fluxor" component is therefore architected to manage the dynamic, evolving state of the developer's interaction with the AI. This encompasses not just conversational history, but the entire cognitive workflow: the user's current context, their focus, the branching reasoning paths being explored, and the history of strategic choices made by both the user and the system.
+The term "Fluxor" immediately suggests a paradigm of state management. In software engineering, architectural patterns like Flux and Redux, and libraries such as Fluxor for.NET, are designed to manage application state in a predictable and centralized manner.3 The QAeF project adapts this concept from the domain of user interface state to the domain of cognitive state. The "Fluxor" component is therefore architected to manage the dynamic, evolving state of the developer's interaction with the AI. This encompasses not just conversational history, but the entire cognitive workflow: the user's current context, their focus, the branching reasoning paths being explored, and the history of strategic choices made by both the user and the system.
 
-The terms "Quantum" and "Æon" elevate the project's ambition beyond a simple tool. "Quantum" is interpreted as a metaphor for the probabilistic and multifaceted nature of creative problem-solving. In the initial stages of tackling a complex coding challenge, multiple potential solutions, architectural approaches, and reasoning paths exist simultaneously—much like a quantum superposition. The QÆF framework is designed to help the user explore these parallel possibilities before collapsing them into a single, chosen implementation. "Æon" signifies the project's commitment to a long-term, evolving partnership. This is not a system for one-off, transactional queries. It is designed to build a persistent, growing understanding of the user's goals, coding style, and cognitive preferences over an extended period, an "æon" of collaboration.
+The terms "Quantum" and "Aeon" elevate the project's ambition beyond a simple tool. "Quantum" is interpreted as a metaphor for the probabilistic and multifaceted nature of creative problem-solving. In the initial stages of tackling a complex coding challenge, multiple potential solutions, architectural approaches, and reasoning paths exist simultaneously—much like a quantum superposition. The QAeF framework is designed to help the user explore these parallel possibilities before collapsing them into a single, chosen implementation. "Aeon" signifies the project's commitment to a long-term, evolving partnership. This is not a system for one-off, transactional queries. It is designed to build a persistent, growing understanding of the user's goals, coding style, and cognitive preferences over an extended period, an "Aeon" of collaboration.
 
-This interpretation establishes a direct link between the project's name and its core technical and philosophical requirements. The system must manage cognitive state ("Fluxor"), support the exploration of multiple parallel reasoning paths ("Quantum"), and maintain a long-term, adaptive memory of the user-AI partnership ("Æon").
+This interpretation establishes a direct link between the project's name and its core technical and philosophical requirements. The system must manage cognitive state ("Fluxor"), support the exploration of multiple parallel reasoning paths ("Quantum"), and maintain a long-term, adaptive memory of the user-AI partnership ("Aeon").
 
 #### **1.2 Defining Cognitive Sovereignty in AI-Assisted Development**
 
-The central philosophical mandate of the Quantum Æon Fluxor project is the cultivation of **Cognitive Sovereignty**. This concept emerges as a proactive strategy to address the well-documented risk of cognitive atrophy and the outsourcing of critical thinking that can result from uncritical reliance on AI tools.5 Synthesizing insights from a growing body of work on this topic, Cognitive Sovereignty is defined as an individual's ownership, control, and authority over their own cognitive processes—including attention, reasoning, and decision-making—especially when these processes are mediated by powerful technological systems.5
+The central philosophical mandate of the Quantum Aeon Fluxor project is the cultivation of **Cognitive Sovereignty**. This concept emerges as a proactive strategy to address the well-documented risk of cognitive atrophy and the outsourcing of critical thinking that can result from uncritical reliance on AI tools.5 Synthesizing insights from a growing body of work on this topic, Cognitive Sovereignty is defined as an individual's ownership, control, and authority over their own cognitive processes—including attention, reasoning, and decision-making—especially when these processes are mediated by powerful technological systems.5
 
-For the QÆF project, this principle is not an ethical afterthought but the primary architectural driver. It dictates that the system must be designed to augment and amplify the user's intellect, not to automate it away. The phenomenon of "cognitive offloading," where individuals use external tools to reduce cognitive demand, can lead to a dependency that erodes foundational skills.9 The QÆF framework is architected to counteract this by reframing the user's role from that of a simple "prompter," who outsources thinking to a machine, to that of a "composer," who skillfully orchestrates AI capabilities as part of a broader, human-led creative process.5
+For the QAeF project, this principle is not an ethical afterthought but the primary architectural driver. It dictates that the system must be designed to augment and amplify the user's intellect, not to automate it away. The phenomenon of "cognitive offloading," where individuals use external tools to reduce cognitive demand, can lead to a dependency that erodes foundational skills.9 The QAeF framework is architected to counteract this by reframing the user's role from that of a simple "prompter," who outsources thinking to a machine, to that of a "composer," who skillfully orchestrates AI capabilities as part of a broader, human-led creative process.5
 
-This mandate has profound implications for the system's design. A standard AI tool might optimize for speed and automation, providing a single answer as quickly as possible. In contrast, the QÆF must optimize for depth of thought and user control. Its interface cannot be a simple chat box; it must provide affordances for managing multiple lines of reasoning, comparing and contrasting AI-generated alternatives, and editing or composing final outputs.10 This ensures the user retains final authorship and control over their intellectual product, a key aspect of digital autonomy.11 The entire system, from its user interface to its data governance model, must be built to serve this primary goal of empowering the user as a sovereign cognitive agent.
+This mandate has profound implications for the system's design. A standard AI tool might optimize for speed and automation, providing a single answer as quickly as possible. In contrast, the QAeF must optimize for depth of thought and user control. Its interface cannot be a simple chat box; it must provide affordances for managing multiple lines of reasoning, comparing and contrasting AI-generated alternatives, and editing or composing final outputs.10 This ensures the user retains final authorship and control over their intellectual product, a key aspect of digital autonomy.11 The entire system, from its user interface to its data governance model, must be built to serve this primary goal of empowering the user as a sovereign cognitive agent.
 
-#### **1.3 The Æon Mandate: The User as the Sovereign Composer**
+#### **1.3 The Aeon Mandate: The User as the Sovereign Composer**
 
-To operationalize the principle of Cognitive Sovereignty, the QÆF framework implements several key features that position the user as the "Sovereign Composer" of their work. These features are designed to make the thinking process more explicit, collaborative, and user-directed.
+To operationalize the principle of Cognitive Sovereignty, the QAeF framework implements several key features that position the user as the "Sovereign Composer" of their work. These features are designed to make the thinking process more explicit, collaborative, and user-directed.
 
 First, the system will incorporate the concept of a **Custom Context CV (C³)**, as proposed in the work of Greg Twemlow.5 Before embarking on a complex task, the user will be guided through a structured process to articulate their current context. This is not a resume, but a declaration of their immediate goals, existing knowledge base, core values or design principles, and specific constraints for the task at hand. This simple act forces the crucial cognitive work of self-reflection to occur
 
@@ -40,23 +40,23 @@ Second, the user's relationship with the AI is transformed from a transaction in
 * Allow direct editing and modification of any AI-generated code or text, reinforcing user control.10
 * Maintain distinct "thought threads" corresponding to different branches of the ToT exploration, which the user can switch between.
 
-Third, the system is designed to build user confidence. A primary reason users may default to outsourcing their thinking is a lack of confidence in their own abilities.5 The QÆF framework addresses this by being transparent about its reasoning processes. When it uses a complex strategy like ToT, it can visualize the thought-tree, showing the user
+Third, the system is designed to build user confidence. A primary reason users may default to outsourcing their thinking is a lack of confidence in their own abilities.5 The QAeF framework addresses this by being transparent about its reasoning processes. When it uses a complex strategy like ToT, it can visualize the thought-tree, showing the user
 
 *how* it arrived at a solution. This transparency demystifies the AI's process and serves as a learning tool, helping the user internalize effective problem-solving strategies. By making the user the conductor of a powerful orchestra of AI tools, the system aims to build literacy and self-belief, inoculating them against the "siren song of the shortcut".5
 
 ### **Section 2: The Prompt++ MCP Blueprint: Programmatic Prompt Engineering**
 
-The technical execution of the QÆF's philosophy begins with a sophisticated approach to prompt engineering. This is based on a reconstructive analysis of the prompt-plus-plus-mcp repository 12, which, as its name suggests, focuses on two key areas: advanced prompt enhancement ('++') and robust integration into the developer's workflow via the Model Context Protocol ('MCP').
+The technical execution of the QAeF's philosophy begins with a sophisticated approach to prompt engineering. This is based on a reconstructive analysis of the prompt-plus-plus-mcp repository 12, which, as its name suggests, focuses on two key areas: advanced prompt enhancement ('++') and robust integration into the developer's workflow via the Model Context Protocol ('MCP').
 
 #### **2.1 Reconstructing the prompt-plus-plus-mcp Architecture**
 
 Information from community discussions, forks, and related projects 14 allows for the reconstruction of a likely architecture for
 
-prompt-plus-plus-mcp. The core idea is to treat prompt engineering not as a manual art but as a programmatic, structured discipline. The inclusion of "MCP" is critical. The **Model Context Protocol (MCP)** is an open standard that enables LLMs to seamlessly integrate with external data sources and tools, such as those within an IDE.18 This allows the QÆF to move beyond being a simple text-in, text-out utility and become a deeply integrated "tool" that the LLM can be instructed to use, receiving structured context and performing specific actions within the VS Code environment. For example, an MCP tool could provide the LLM with the content of the currently selected code block, the project's file structure, or the output of a linter.
+prompt-plus-plus-mcp. The core idea is to treat prompt engineering not as a manual art but as a programmatic, structured discipline. The inclusion of "MCP" is critical. The **Model Context Protocol (MCP)** is an open standard that enables LLMs to seamlessly integrate with external data sources and tools, such as those within an IDE.18 This allows the QAeF to move beyond being a simple text-in, text-out utility and become a deeply integrated "tool" that the LLM can be instructed to use, receiving structured context and performing specific actions within the VS Code environment. For example, an MCP tool could provide the LLM with the content of the currently selected code block, the project's file structure, or the output of a linter.
 
 #### **2.2 Core Components: StrategyManager, PromptRefiner, and Meta-Prompt Repository**
 
-Based on the functionality demonstrated in related projects like the baconnier/prompt-plus-plus Hugging Face Space 14, the QÆF's prompting subsystem will be built around three core Python classes, explicitly implementing the
+Based on the functionality demonstrated in related projects like the baconnier/prompt-plus-plus Hugging Face Space 14, the QAeF's prompting subsystem will be built around three core Python classes, explicitly implementing the
 
 **Strategy Design Pattern**.19 This pattern is ideal as it allows for the definition of a family of algorithms (prompting strategies), encapsulating each one, and making them interchangeable at runtime.
 
@@ -82,11 +82,11 @@ StrategyManager will use an EXPO-based mechanism to treat the selection of a met
 
 ## **Part II: Technical Architecture and System Design**
 
-This part of the plan translates the conceptual and philosophical foundations of the Quantum Æon Fluxor project into a concrete technical blueprint. It provides a detailed specification for the system's architecture, data structures, and core algorithms, outlining the "how" of its implementation.
+This part of the plan translates the conceptual and philosophical foundations of the Quantum Aeon Fluxor project into a concrete technical blueprint. It provides a detailed specification for the system's architecture, data structures, and core algorithms, outlining the "how" of its implementation.
 
 ### **Section 3: The Hybrid Inference Engine: Orchestrating Local and Cloud Intelligence**
 
-The core of the QÆF's operational capability is its Hybrid Inference Engine. This is not merely a system that can use different models, but a sophisticated orchestration layer designed to dynamically route tasks to the most appropriate computational tier based on a multi-faceted analysis of the query, context, and system constraints. This approach is designed to balance performance, cost, latency, and privacy, delivering an optimal user experience.
+The core of the QAeF's operational capability is its Hybrid Inference Engine. This is not merely a system that can use different models, but a sophisticated orchestration layer designed to dynamically route tasks to the most appropriate computational tier based on a multi-faceted analysis of the query, context, and system constraints. This approach is designed to balance performance, cost, latency, and privacy, delivering an optimal user experience.
 
 #### **3.1 The Semantic Router Core**
 
@@ -97,7 +97,7 @@ semantic-router moves beyond simple keyword matching or rule-based logic to make
 1. **Dense Encoder (e.g., OpenAI text-embedding-3-large, FastEmbed)**: This encoder generates dense vector embeddings that capture the semantic essence or topic of the user's query. This allows the router to understand that "refactor this code for clarity" and "improve the readability of this function" are semantically similar requests.
 2. **Sparse Encoder (e.g., BM25Encoder)**: This encoder focuses on keyword importance. It ensures that specific, niche terminology (like a proprietary library name or a rare algorithm) is given appropriate weight in the routing decision, even if it's not semantically common.
 
-By combining these two signals with a tunable alpha parameter, the HybridRouter can make nuanced decisions based on both the general intent and the specific details of a query.24 This aligns perfectly with research on hybrid inference, which demonstrates that using a dedicated router to assign queries based on predicted difficulty and desired quality can lead to significant cost savings (up to 40% fewer calls to large models) with no drop in response quality.25 The QÆF's
+By combining these two signals with a tunable alpha parameter, the HybridRouter can make nuanced decisions based on both the general intent and the specific details of a query.24 This aligns perfectly with research on hybrid inference, which demonstrates that using a dedicated router to assign queries based on predicted difficulty and desired quality can lead to significant cost savings (up to 40% fewer calls to large models) with no drop in response quality.25 The QAeF's
 
 HybridRouter will be the initial entry point for every user request, intelligently triaging tasks before they are sent for execution.
 
@@ -106,15 +106,15 @@ HybridRouter will be the initial entry point for every user request, intelligent
 The HybridRouter will direct queries to one of three distinct execution tiers, each tailored for a different class of tasks.
 
 * **Tier 1: Local/Edge Execution**: This tier is optimized for low-latency, low-cost, and high-privacy operations. It is the default choice for tasks like simple code completion, text formatting, quick syntax checks, and generating boilerplate.
-  + **Implementation**: This tier will be powered by small, efficient, and quantized LLMs (e.g., Mistral 7B, Qwen2 0.5B, Phi-3). These models will be run locally on the user's machine using **LM Studio**. LM Studio provides a user-friendly interface for managing local models and, crucially, exposes them via an OpenAI-compatible API server, typically at http://localhost:1234.26 This standardization allows the QÆF framework to interact with local models using the same interface as cloud models, simplifying the integration logic.
+  + **Implementation**: This tier will be powered by small, efficient, and quantized LLMs (e.g., Mistral 7B, Qwen2 0.5B, Phi-3). These models will be run locally on the user's machine using **LM Studio**. LM Studio provides a user-friendly interface for managing local models and, crucially, exposes them via an OpenAI-compatible API server, typically at http://localhost:1234.26 This standardization allows the QAeF framework to interact with local models using the same interface as cloud models, simplifying the integration logic.
 * **Tier 2: Premium Cloud Execution**: This tier is reserved for high-complexity tasks that demand deep reasoning, creative generation, complex planning, or extensive world knowledge. Examples include architecting a new software component, explaining a complex algorithm in detail, or debugging a subtle logical error.
   + **Implementation**: This tier will leverage state-of-the-art, large-scale models via their cloud APIs, specifically **Gemini (Pro/Advanced)** and **Mistral (Large/Next)**. Access to these APIs requires robust and secure key management. During local development, API keys will be stored in .env files and loaded into environment variables. For any deployed or shared version of the system, these keys will be managed through a dedicated cloud service like AWS Secrets Manager, GCP Secret Manager, or Azure Key Vault to prevent accidental exposure in source code.28
 * **Tier 3: Fused/Specialist Execution**: This tier represents a cutting-edge capability for creating temporary, specialized models on-demand to handle highly specific, recurring tasks. It provides a powerful middle ground between general-purpose cloud models and static local models.
   + **Implementation**: This tier will be built using the **mergekit** library.30
-    mergekit enables the parameter-level fusion of two or more LLMs without requiring extensive retraining or GPU resources. The QÆF system can leverage this in several ways:
+    mergekit enables the parameter-level fusion of two or more LLMs without requiring extensive retraining or GPU resources. The QAeF system can leverage this in several ways:
     - **TIES-Merging**: If a user frequently works on a specific proprietary codebase, the system could use a small local model and fine-tune it on that code. mergekit's TIES (Trim, Elect Sign, Disjoint Merge) method could then be used to merge the delta weights of this specialist model with a more capable base model, creating a temporary expert on that specific codebase.30
     - **SLERP (Spherical Linear Interpolation)**: For tasks requiring a blend of two distinct capabilities (e.g., creative coding from one model and rigorous logical analysis from another), SLERP can be used to interpolate between the weights of two models, creating a hybrid with a balanced skill set.30
-  + This dynamic model fusion capability allows the QÆF to adapt not just its prompts or strategies, but its underlying model architecture, to the user's evolving needs.
+  + This dynamic model fusion capability allows the QAeF to adapt not just its prompts or strategies, but its underlying model architecture, to the user's evolving needs.
 
 To ensure transparency and provide data for the system's metacognitive loop, the HybridRouter's decision process will be explicitly logged. This log is not merely for debugging; it is a core data asset for the system's self-improvement.
 
@@ -128,26 +128,26 @@ To ensure transparency and provide data for the system's metacognitive loop, the
 
 ### **Section 4: The Metacognitive Reasoning Framework**
 
-The QÆF's ability to tackle complex problems hinges on its reasoning framework. This framework is "metacognitive" because it not only executes reasoning strategies but is also aware of them, can choose between them, and can learn about their effectiveness over time. It combines a powerful deliberative engine with a dynamic knowledge architecture.
+The QAeF's ability to tackle complex problems hinges on its reasoning framework. This framework is "metacognitive" because it not only executes reasoning strategies but is also aware of them, can choose between them, and can learn about their effectiveness over time. It combines a powerful deliberative engine with a dynamic knowledge architecture.
 
 #### **4.1 The Deliberative Engine: Tree-of-Thoughts (ToT)**
 
-For non-trivial problems that require planning, exploration, or creative problem-solving, the QÆF will move beyond the linear, sequential nature of Chain-of-Thought (CoT) prompting.32 The primary reasoning engine will be an implementation of the
+For non-trivial problems that require planning, exploration, or creative problem-solving, the QAeF will move beyond the linear, sequential nature of Chain-of-Thought (CoT) prompting.32 The primary reasoning engine will be an implementation of the
 
 **Tree-of-Thoughts (ToT)** framework.33 ToT reframes problem-solving as a search through a tree of possibilities, allowing the LLM to perform deliberate decision-making, lookahead, and backtracking.32
 
-The QÆF's ToT implementation will be modular, addressing the four key components defined in the foundational research 32:
+The QAeF's ToT implementation will be modular, addressing the four key components defined in the foundational research 32:
 
 1. **Thought Decomposition**: The system will use an LLM to break a high-level user goal (e.g., "optimize this database query") into a series of smaller, coherent thought steps (e.g., "1. Analyze the current query plan. 2. Identify potential bottlenecks. 3. Propose alternative indexing strategies. 4. Rewrite the query using the best strategy.").
 2. **Thought Generation**: At each step (node) in the tree, the system will prompt an LLM to generate multiple distinct candidate "thoughts" or solutions (e.g., three different ways to rewrite the query).
 3. **State Evaluation**: A crucial metacognitive step. The system will use an LLM as a heuristic evaluator. It will present the partial solution (the current path in the tree) to the model and ask it to rate its promise on a scale (e.g., 1-10) or classify its viability (e.g., "promising," "dead end"). This allows the system to intelligently prune unpromising branches of the search tree.
 4. **Search Algorithm**: The framework will incorporate standard search algorithms like Breadth-First Search (BFS) to explore all options at a given depth or Depth-First Search (DFS) to pursue a single promising path to its conclusion before backtracking. The choice of search algorithm can be tailored to the problem type.
 
-This deliberative process allows the QÆF to tackle problems where CoT would fail, significantly enhancing its problem-solving abilities on tasks requiring non-trivial planning.33
+This deliberative process allows the QAeF to tackle problems where CoT would fail, significantly enhancing its problem-solving abilities on tasks requiring non-trivial planning.33
 
 #### **4.2 Dynamic Strategy Selection with the Strategy Pattern**
 
-Recognizing that ToT is not always the most efficient approach, the QÆF will implement a flexible mechanism for choosing the optimal reasoning technique for any given task. This will be achieved using the **Strategy design pattern** 19, which allows for the encapsulation of different algorithms and their dynamic selection at runtime.
+Recognizing that ToT is not always the most efficient approach, the QAeF will implement a flexible mechanism for choosing the optimal reasoning technique for any given task. This will be achieved using the **Strategy design pattern** 19, which allows for the encapsulation of different algorithms and their dynamic selection at runtime.
 
 The StrategyManager module will contain a family of interchangeable reasoning strategies, including:
 
@@ -160,7 +160,7 @@ The StrategyManager will use signals from the HybridRouter (like Intent and Comp
 
 #### **4.3 Dynamic Knowledge Architecture: The Strategy Knowledge Graph (SKG)**
 
-To enable true, long-term adaptation, the QÆF requires a memory system far more sophisticated than a simple conversational log. The system will implement a **Dynamic Graph RAG (DynaGRAG)** architecture, which leverages a knowledge graph to store and retrieve structured information about its own operations.35 This moves beyond vector search on text chunks, which can suffer from a lack of explainability and "context poisoning" 37, to a system that can perform complex, multi-hop reasoning over its own history.38
+To enable true, long-term adaptation, the QAeF requires a memory system far more sophisticated than a simple conversational log. The system will implement a **Dynamic Graph RAG (DynaGRAG)** architecture, which leverages a knowledge graph to store and retrieve structured information about its own operations.35 This moves beyond vector search on text chunks, which can suffer from a lack of explainability and "context poisoning" 37, to a system that can perform complex, multi-hop reasoning over its own history.38
 
 This **Strategy Knowledge Graph (SKG)** will be implemented using a graph database like **Neo4j** 39 and will serve as the system's evolving, long-term memory.
 
@@ -172,7 +172,7 @@ This structure allows the Supervisor agent to ask complex, analytical questions 
 
 ### **Section 5: The Agentic Supervisor: A Framework for Self-Monitoring and Adaptation**
 
-The QÆF's intelligence is not confined to its models or reasoning strategies; it resides in the overarching agentic framework that monitors, orchestrates, and improves the entire system. This is the role of the Agentic Supervisor, a central component designed for metacognitive control and autonomous adaptation.
+The QAeF's intelligence is not confined to its models or reasoning strategies; it resides in the overarching agentic framework that monitors, orchestrates, and improves the entire system. This is the role of the Agentic Supervisor, a central component designed for metacognitive control and autonomous adaptation.
 
 #### **5.1 Supervisor Architecture with LangGraph**
 
@@ -180,10 +180,10 @@ The supervisor and its ecosystem of worker agents will be implemented using the 
 
 langgraph-supervisor package specifically provides a robust, pre-built pattern for hierarchical multi-agent systems, where a central supervisor coordinates specialized agents.43
 
-The QÆF's agentic architecture will consist of:
+The QAeF's agentic architecture will consist of:
 
 * **The Supervisor Agent**: This is the system's central nervous system. It receives the initial user task and orchestrates the entire workflow. Its primary responsibilities are to delegate tasks to the appropriate worker agent and to run the continuous adaptation loop. It does not perform the primary work itself but acts as a coordinator.42
-* **Worker Agents**: These are specialized, tool-using agents, each responsible for a specific part of the QÆF pipeline. The initial set of worker agents will include:
+* **Worker Agents**: These are specialized, tool-using agents, each responsible for a specific part of the QAeF pipeline. The initial set of worker agents will include:
   + RoutingAgent: Interfaces with the HybridRouter to determine the appropriate model tier.
   + PromptRefinementAgent: Manages the StrategyManager and PromptRefiner to enhance the user's query.
   + ReasoningAgent: Executes the chosen reasoning strategy (ToT, CoT-SC, etc.) using the selected model.
@@ -194,7 +194,7 @@ Communication between the supervisor and the workers is managed via **tool-based
 
 #### **5.2 The Perception-Decision-Evaluation-Adaptation Loop**
 
-The Supervisor's most critical function is to implement an autonomous learning and adaptation loop, a hallmark of truly adaptive AI systems.47 This loop operates continuously in the background, enabling the QÆF to learn from experience and improve its performance over time without direct human intervention.
+The Supervisor's most critical function is to implement an autonomous learning and adaptation loop, a hallmark of truly adaptive AI systems.47 This loop operates continuously in the background, enabling the QAeF to learn from experience and improve its performance over time without direct human intervention.
 
 1. **Perception**: The Supervisor continuously ingests real-time data from the Performance Monitoring Subsystem. This includes operational metrics, quality scores, and explicit user feedback.47
 2. **Decision (Anomaly/Pattern Detection)**: The Supervisor uses statistical methods and a dedicated LLM call to analyze the incoming data stream, identifying significant patterns or anomalies. For example, it might detect that "The TreeOfThoughtsStrategy is showing a 30% higher latency when applied to TypeScript refactoring tasks compared to Python."
@@ -239,11 +239,11 @@ This data will be visualized in a comprehensive dashboard, providing transparenc
 
 ## **Part III: Implementation and Operationalization Plan**
 
-This part outlines a concrete, phased roadmap for the construction and deployment of the Quantum Æon Fluxor system. It details the project's structure, key software components, and essential operational protocols, providing an actionable guide for the development team.
+This part outlines a concrete, phased roadmap for the construction and deployment of the Quantum Aeon Fluxor system. It details the project's structure, key software components, and essential operational protocols, providing an actionable guide for the development team.
 
 ### **Section 6: Phase-Based Development Roadmap**
 
-The development of the QÆF will be executed in four distinct phases, each building upon the last and delivering incremental value. This iterative approach allows for continuous testing, feedback, and refinement throughout the project lifecycle.
+The development of the QAeF will be executed in four distinct phases, each building upon the last and delivering incremental value. This iterative approach allows for continuous testing, feedback, and refinement throughout the project lifecycle.
 
 #### **Phase 1: Core Infrastructure & Hybrid Routing (Months 1-3)**
 
@@ -262,10 +262,10 @@ This phase focuses on developing the programmatic prompt engineering capabilitie
 
 * **Milestones**:
   1. **Prompting Subsystem**: Develop the initial versions of the MetaPromptRepository, PromptRefiner, and StrategyManager classes. The repository will be populated with the foundational meta-prompts identified in the prompt-plus-plus-mcp reconstruction.14
-  2. **MCP Server Implementation**: Build a server that implements the Model Context Protocol (MCP).18 This server will expose the QÆF's capabilities (e.g.,
+  2. **MCP Server Implementation**: Build a server that implements the Model Context Protocol (MCP).18 This server will expose the QAeF's capabilities (e.g.,
      refine\_prompt, execute\_query) as tools that an MCP-compatible client can call.15
-  3. **VS Code Extension v0.1**: Create a basic VS Code extension that acts as the MCP client. This extension will allow a user to highlight a block of code, right-click to open a QÆF input field, and send the prompt and code context to the MCP server. The returned response will be displayed in a webview panel.
-* **Outcome**: A user can interact with the QÆF system directly from within their VS Code editor. They can issue a simple prompt, have it programmatically refined, and receive a response from the hybrid backend, demonstrating the core user workflow.
+  3. **VS Code Extension v0.1**: Create a basic VS Code extension that acts as the MCP client. This extension will allow a user to highlight a block of code, right-click to open a QAeF input field, and send the prompt and code context to the MCP server. The returned response will be displayed in a webview panel.
+* **Outcome**: A user can interact with the QAeF system directly from within their VS Code editor. They can issue a simple prompt, have it programmatically refined, and receive a response from the hybrid backend, demonstrating the core user workflow.
 
 #### **Phase 3: Advanced Reasoning & Agentic Supervisor (Months 7-10)**
 
@@ -276,7 +276,7 @@ This phase introduces the advanced reasoning capabilities and the agentic archit
   2. **Agentic Framework**: Build the initial agentic system using langgraph-supervisor-py.42 This involves defining the
      Supervisor agent and the initial set of worker agents (RoutingAgent, PromptRefinementAgent, ReasoningAgent).
   3. **Monitoring Dashboard v1.0**: Develop the first iteration of the performance monitoring dashboard. It will display essential operational metrics like API latency, cost, and token usage, providing initial visibility into the system's behavior.54
-* **Outcome**: The QÆF system is now capable of performing complex, multi-step reasoning for challenging tasks. The entire workflow is orchestrated by a central supervisor, transitioning the system from a simple toolchain to a coordinated agentic system.
+* **Outcome**: The QAeF system is now capable of performing complex, multi-step reasoning for challenging tasks. The entire workflow is orchestrated by a central supervisor, transitioning the system from a simple toolchain to a coordinated agentic system.
 
 #### **Phase 4: Dynamic Knowledge & Self-Adaptation (Months 11-15)**
 
@@ -287,11 +287,11 @@ The final phase implements the system's long-term memory and autonomous learning
   2. **KnowledgeGraphAgent**: Develop the KnowledgeGraphAgent, equipped with tools to write to and read from the SKG using Cypher queries. This agent will be responsible for logging all system activities to the graph.
   3. **Full Adaptation Loop**: Implement the complete Perception-Decision-Evaluation-Adaptation feedback loop within the Supervisor agent. The Supervisor will now be able to query the SKG via the KnowledgeGraphAgent to gather data for its reflection and adaptation steps.47
   4. **Advanced Prompt Optimization**: Integrate the MePO and EXPO principles into the PromptRefinementAgent and StrategyManager to enable adaptive prompt optimization.20
-* **Outcome**: A fully realized Quantum Æon Fluxor system. It is now a metacognitive, self-improving framework that learns from every interaction, autonomously optimizes its own strategies and prompts, and provides a powerful, intellectually augmenting experience for the developer.
+* **Outcome**: A fully realized Quantum Aeon Fluxor system. It is now a metacognitive, self-improving framework that learns from every interaction, autonomously optimizes its own strategies and prompts, and provides a powerful, intellectually augmenting experience for the developer.
 
 ### **Section 7: Modular Python Implementation and Code Structure**
 
-A well-organized and modular codebase is critical for the long-term maintainability and extensibility of the QÆF project. The proposed structure separates concerns, making it easier to develop, test, and upgrade individual components.
+A well-organized and modular codebase is critical for the long-term maintainability and extensibility of the QAeF project. The proposed structure separates concerns, making it easier to develop, test, and upgrade individual components.
 
 #### **7.1 Project Directory Structure**
 
@@ -350,7 +350,7 @@ quantum-aeon-fluxor/
 
 #### **7.3 Parsing and Knowledge Ingestion**
 
-To provide the QÆF with context about the codebase it is operating on, the system will include a utility for parsing project documentation. It will use a library like **markdown-analysis** 58 or
+To provide the QAeF with context about the codebase it is operating on, the system will include a utility for parsing project documentation. It will use a library like **markdown-analysis** 58 or
 
 **markdown-to-data** 59 to parse files such as
 
@@ -358,23 +358,23 @@ README.md, CONTRIBUTING.md, and other architectural documents. The extracted inf
 
 ## **Part IV: Governance, Ethics, and Future Trajectory**
 
-The development of a powerful, autonomous AI system like the Quantum Æon Fluxor carries significant ethical responsibilities. This final part of the plan addresses the critical non-technical aspects of the project, establishing robust governance structures, protocols for bias mitigation, and a vision for the system's responsible evolution.
+The development of a powerful, autonomous AI system like the Quantum Aeon Fluxor carries significant ethical responsibilities. This final part of the plan addresses the critical non-technical aspects of the project, establishing robust governance structures, protocols for bias mitigation, and a vision for the system's responsible evolution.
 
 ### **Section 8: Ethical Guardrails and Bias Mitigation**
 
-An unwavering commitment to ethical AI is a cornerstone of the QÆF project. This requires a proactive, deeply integrated approach to identifying and mitigating bias, ensuring data privacy, and maintaining system security.
+An unwavering commitment to ethical AI is a cornerstone of the QAeF project. This requires a proactive, deeply integrated approach to identifying and mitigating bias, ensuring data privacy, and maintaining system security.
 
 #### **8.1 A Lifecycle Approach to Bias Mitigation**
 
-Bias in AI is not a problem that can be solved with a single technical fix. It can be introduced at any point in the system's lifecycle. Therefore, the QÆF project will adopt a comprehensive, **lifecycle approach to bias mitigation**, embedding checks and balances at every stage: from initial conception through data handling, model development, deployment, and ongoing monitoring.60
+Bias in AI is not a problem that can be solved with a single technical fix. It can be introduced at any point in the system's lifecycle. Therefore, the QAeF project will adopt a comprehensive, **lifecycle approach to bias mitigation**, embedding checks and balances at every stage: from initial conception through data handling, model development, deployment, and ongoing monitoring.60
 
-A key architectural feature that supports this is the system's **hybrid nature**. Purely learning-based systems can inherit and amplify biases present in their training data.62 The QÆF's architecture, which combines data-driven machine learning models with explicit, rule-based components, provides a powerful mechanism for risk mitigation. The symbolic, rule-based systems—such as the explicit logic in the
+A key architectural feature that supports this is the system's **hybrid nature**. Purely learning-based systems can inherit and amplify biases present in their training data.62 The QAeF's architecture, which combines data-driven machine learning models with explicit, rule-based components, provides a powerful mechanism for risk mitigation. The symbolic, rule-based systems—such as the explicit logic in the
 
 HybridRouter, the handcrafted meta-prompts, or hard-coded ethical constraints—can act as a governing layer, guiding the system's behavior and preventing the ML components from making decisions that are unfair, biased, or erroneous.62 This neuro-symbolic approach aligns with advanced research into creating more controllable and trustworthy AI.64
 
 #### **8.2 Implementing a "White-Box" Evaluation Framework**
 
-To ensure the system's outputs are fair, transparent, and aligned with user values, the QÆF project will implement a "white-box" evaluation framework. This framework is designed to make the AI's internal cognitive processes traceable and interpretable, moving beyond opaque, "black-box" models. The evaluation methodology will be based on the **DIKWP (Data, Information, Knowledge, Wisdom, Purpose) cognitive model**.65
+To ensure the system's outputs are fair, transparent, and aligned with user values, the QAeF project will implement a "white-box" evaluation framework. This framework is designed to make the AI's internal cognitive processes traceable and interpretable, moving beyond opaque, "black-box" models. The evaluation methodology will be based on the **DIKWP (Data, Information, Knowledge, Wisdom, Purpose) cognitive model**.65
 
 This model provides a structured way to diagnose and audit the system for different types of bias at each distinct semantic layer of cognition 66:
 
@@ -388,7 +388,7 @@ This multi-layered bias identification and correction mechanism provides a robus
 
 #### **8.3 Data Privacy and Security**
 
-Given that the QÆF system will have access to user code, project documents, and detailed interaction logs, data privacy and security are of paramount importance.
+Given that the QAeF system will have access to user code, project documents, and detailed interaction logs, data privacy and security are of paramount importance.
 
 * **Data Minimization and Scoping**: The principle of least privilege will be strictly enforced. The system will only access the data it absolutely needs for a given task. Access controls on the Strategy Knowledge Graph will be granular, ensuring that data from one user or project is not accessible to another unless explicitly permitted.67
 * **Privacy-Preserving Routing**: The HybridRouter will be programmed to treat user code and prompts as privacy-sensitive by default. It will prioritize the use of Tier 1 local models for any task involving proprietary or personal data, only using cloud APIs when absolutely necessary and with explicit user awareness.
@@ -396,21 +396,21 @@ Given that the QÆF system will have access to user code, project documents, and
 
 ### **Section 9: Conclusion: The Path to the Cognitive Composer**
 
-The Quantum Æon Fluxor project represents a significant and ambitious step beyond the current generation of AI developer assistants. By architecting a system grounded in the principles of Cognitive Sovereignty, metacognitive self-awareness, and hybrid intelligence, the QÆF aims to create not just a more powerful tool, but a fundamentally new kind of intellectual partner for the software developer.
+The Quantum Aeon Fluxor project represents a significant and ambitious step beyond the current generation of AI developer assistants. By architecting a system grounded in the principles of Cognitive Sovereignty, metacognitive self-awareness, and hybrid intelligence, the QAeF aims to create not just a more powerful tool, but a fundamentally new kind of intellectual partner for the software developer.
 
 #### **9.1 Summary of Strategic Value**
 
-The strategic value of the QÆF lies in its holistic and forward-looking design. It directly confronts the primary challenges facing the adoption of AI in complex creative domains: the risk of cognitive deskilling, the limitations of static models, the opacity of "black-box" reasoning, and the difficulty of managing cost, performance, and privacy in a hybrid environment.
+The strategic value of the QAeF lies in its holistic and forward-looking design. It directly confronts the primary challenges facing the adoption of AI in complex creative domains: the risk of cognitive deskilling, the limitations of static models, the opacity of "black-box" reasoning, and the difficulty of managing cost, performance, and privacy in a hybrid environment.
 
-By implementing a programmatic and adaptive prompt engineering framework, a multi-tiered hybrid inference engine, and an agentic supervisor capable of autonomous reflection and improvement, the QÆF will provide a platform that is not only highly capable but also transparent, adaptable, and aligned with the user's long-term intellectual growth. Its focus on making the user a "composer" who orchestrates AI, rather than a consumer who simply receives its output, is a paradigm shift that promises to unlock new levels of creativity and productivity.
+By implementing a programmatic and adaptive prompt engineering framework, a multi-tiered hybrid inference engine, and an agentic supervisor capable of autonomous reflection and improvement, the QAeF will provide a platform that is not only highly capable but also transparent, adaptable, and aligned with the user's long-term intellectual growth. Its focus on making the user a "composer" who orchestrates AI, rather than a consumer who simply receives its output, is a paradigm shift that promises to unlock new levels of creativity and productivity.
 
 #### **9.2 Long-term Vision**
 
-The ultimate vision for the Quantum Æon Fluxor extends beyond its initial implementation as a developer tool. The long-term goal is to evolve the QÆF into a comprehensive **Cognitive Composition Environment**. This is a fully integrated digital space where a user and their AI partner can collaboratively navigate the entire lifecycle of complex problem-solving—from initial ideation and exploration of possibilities to architectural design, implementation, debugging, and documentation. In this environment, the AI's role expands from merely writing code to helping structure thoughts, visualizing complex systems, challenging assumptions, and managing the vast cognitive load associated with modern software engineering.
+The ultimate vision for the Quantum Aeon Fluxor extends beyond its initial implementation as a developer tool. The long-term goal is to evolve the QAeF into a comprehensive **Cognitive Composition Environment**. This is a fully integrated digital space where a user and their AI partner can collaboratively navigate the entire lifecycle of complex problem-solving—from initial ideation and exploration of possibilities to architectural design, implementation, debugging, and documentation. In this environment, the AI's role expands from merely writing code to helping structure thoughts, visualizing complex systems, challenging assumptions, and managing the vast cognitive load associated with modern software engineering.
 
 #### **9.3 Future Research Directions**
 
-The modular and extensible architecture of the QÆF provides a fertile ground for future research and development. Several key areas are poised for exploration:
+The modular and extensible architecture of the QAeF provides a fertile ground for future research and development. Several key areas are poised for exploration:
 
 * **Advanced Model Fusion**: While the initial plan incorporates parameter-merging with mergekit, future iterations could explore more dynamic, token-level fusion techniques. Methods like **FuseLLM**, which fuse the generative probability distributions of multiple models 56, or
   **Speculative Ensembling**, which uses multiple models in parallel during decoding 70, could offer even greater performance and adaptability.

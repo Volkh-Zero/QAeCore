@@ -2,7 +2,7 @@
 Pleroma - Reasoning Systems for Quantum Aeon Core.
 
 This package contains the reasoning and inference components
-that power the cognitive capabilities of the QÆCore system.
+that power the cognitive capabilities of the QAeCore system.
 """
 
 # Import key components

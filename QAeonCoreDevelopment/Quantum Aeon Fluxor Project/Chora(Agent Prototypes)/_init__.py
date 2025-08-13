@@ -2,7 +2,7 @@
 Chora - Agent Prototypes for Quantum Aeon Core.
 
 This package contains various agent implementations and prototypes
-that can be used within the QÆCore ecosystem.
+that can be used within the QAeCore ecosystem.
 """
 
 # Import base agent and other key components

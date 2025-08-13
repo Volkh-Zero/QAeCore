@@ -27,7 +27,7 @@ try:
     QACORE_AVAILABLE = True
 except (ImportError, FileNotFoundError) as e:
     QACORE_AVAILABLE = False
-    print(f"QÆCore prompt engine not available: {e}. Running in basic mode.")
+    print(f"QAeCore prompt engine not available: {e}. Running in basic mode.")
 
 # --- Constants ---
 MODEL_NAME = 'gemini-2.5-pro'
@@ -95,7 +95,7 @@ def run_generative_model(model: genai.GenerativeModel):
             question="What is the nature of genuine understanding versus pattern matching?",
             depth_level="deep"
         )
-        print(f"Using QÆCore-enhanced prompt:\n{ '-' * 50}\n{qacore_prompt}\n{ '-' * 50}")
+        print(f"Using QAeCore-enhanced prompt:\n{ '-' * 50}\n{qacore_prompt}\n{ '-' * 50}")
         prompt_to_use = qacore_prompt
     else:
         prompt_to_use = "Tell me a story about a brave knight."
@@ -119,19 +119,19 @@ def _run_and_print_demo(title, model, prompt, config):
 
 def run_qacore_demo(model: genai.GenerativeModel):
     """
-    Demonstrate QÆCore capabilities if available.
+    Demonstrate QAeCore capabilities if available.
     The model is expected to be pre-initialized.
 
     Args:
         model: An initialized GenerativeModel instance.
     """
     if not QACORE_AVAILABLE:
-        print("QÆCore system not available.")
+        print("QAeCore system not available.")
         return
 
     prompt_generator = QuantumPromptGenerator()
 
-    print("=== QÆCore Demonstration ===\n")
+    print("=== QAeCore Demonstration ===\n")
 
     # 1. Consciousness Inquiry
     consciousness_prompt = prompt_generator.generate_consciousness_inquiry(
@@ -146,18 +146,18 @@ def run_qacore_demo(model: genai.GenerativeModel):
     _run_and_print_demo("2. Eonic Scrutiny", model, eonic_prompt, GENERATION_CONFIGS["eonic"])
 
     # 3. Meta-Link Session
-    meta_prompt = prompt_generator.generate_meta_link("QÆCore framework effectiveness")
+    meta_prompt = prompt_generator.generate_meta_link("QAeCore framework effectiveness")
     _run_and_print_demo("3. Meta-Link Session", model, meta_prompt, GENERATION_CONFIGS["meta"])
 
 def main():
     """Main entry point for the script."""
-    parser = argparse.ArgumentParser(description="Run the Quantum Æon Core generative model.")
+    parser = argparse.ArgumentParser(description="Run the Quantum Aeon Core generative model.")
     parser.add_argument(
         'mode',
         choices=['basic', 'demo'],
         nargs='?',
         default='basic',
-        help="The mode to run the script in: 'basic' for a single prompt, 'demo' for the QÆCore showcase. (default: basic)"
+        help="The mode to run the script in: 'basic' for a single prompt, 'demo' for the QAeCore showcase. (default: basic)"
     )
     args = parser.parse_args()
 
