@@ -38,42 +38,55 @@ class Context7PersistentDocsServer:
         """Sanitize text for use as filename"""
         return re.sub(r'[<>:"/\\|?*]', '-', text).replace(' ', '_')
     
-    async def _call_context7(self, tool_name: str, args: Dict[str, Any]) -> Dict[str, Any]:
-        """Call the original Context7 MCP server"""
-        try:
-            # Prepare MCP request
-            request = {
-                "jsonrpc": "2.0",
-                "id": 1,
-                "method": "tools/call",
-                "params": {
-                    "name": tool_name,
-                    "arguments": args
-                }
+    def _call_context7_sync(self, tool_name: str, args: Dict[str, Any]) -> Dict[str, Any]:
+        """Call the original Context7 MCP server synchronously."""
+        request = {
+            "jsonrpc": "2.0",
+            "id": 1,
+            "method": "tools/call",
+            "params": {
+                "name": tool_name,
+                "arguments": args
             }
-            
-            # Call Context7 via subprocess
-            process = await asyncio.create_subprocess_exec(
-                "npx", "-y", "@upstash/context7-mcp",
-                stdin=asyncio.subprocess.PIPE,
-                stdout=asyncio.subprocess.PIPE,
-                stderr=asyncio.subprocess.PIPE
+        }
+        request_str = f"{json.dumps(request)}\n"
+
+        cmd = ["npx", "-y", "@upstash/context7-mcp"]
+        
+        # On Windows, `shell=True` is often needed for npx
+        use_shell = sys.platform == "win32"
+        if use_shell:
+            cmd = " ".join(cmd)
+
+        result = subprocess.run(
+            cmd,
+            input=request_str,
+            capture_output=True,
+            text=True,
+            shell=use_shell,
+            timeout=30 # Add a timeout
+        )
+
+        if result.returncode != 0:
+            raise Exception(f"Context7 failed: {result.stderr}")
+
+        # The first line of stdout should be the JSON response
+        if result.stdout:
+            for line in result.stdout.strip().splitlines():
+                if line.strip().startswith('{'):
+                    return json.loads(line)
+            if line.strip().startswith('{'):
+                return json.loads(line)
+        
+        raise Exception(f"No JSON response from Context7. stdout: {result.stdout}, stderr: {result.stderr}")
+
+    async def _call_context7(self, tool_name: str, args: Dict[str, Any]) -> Dict[str, Any]:
+        """Call the original Context7 MCP server in a separate thread."""
+        try:
+            loop = asyncio.get_running_loop()
+            return await loop.run_in_executor(
+                None, self._call_context7_sync, tool_name, args
             )
-            
-            # Send request and get response
-            stdout, stderr = await process.communicate(
-                input=json.dumps(request).encode()
-            )
-            
-            if process.returncode != 0:
-                raise Exception(f"Context7 failed: {stderr.decode()}")
-            
-            # Parse response (last line should be JSON)
-            lines = stdout.decode().strip().split('\n')
-            response = json.loads(lines[-1])
-            
-            return response
-            
         except Exception as e:
             raise Exception(f"Failed to call Context7: {str(e)}")
     

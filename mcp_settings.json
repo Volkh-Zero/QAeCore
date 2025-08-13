@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "context7-persistent": {
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp"],
+      "cwd": "C:/Users/kayno/QAeCore/Global-docs-mcp-python",
+      "alwaysAllow": [
+        "resolve-library-id",
+        "get-library-docs",
+        "list-cached-docs",
+        "read-cached-doc"
+      ]
+    }
+  }
+}

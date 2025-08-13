@@ -1,1 +1,19 @@
-{"mcpServers":{}}
+{
+    "mcpServers": {
+    "context7-persistent": {
+        "command": "uv",
+        "args": [
+            "run",
+            "context7-persistent-docs"
+        ],
+        "cwd": "C:/Users/kayno/QAeCore/global-docs-mcp-python",
+        "alwaysAllow": [
+            "get-library-docs-with-cache",
+            "list-cached-docs",
+            "read-cached-doc",
+            "resolve-library-id"
+        ],
+        "disabled": false
+    }
+    }
+}
