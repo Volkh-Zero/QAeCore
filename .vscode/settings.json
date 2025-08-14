@@ -14,30 +14,6 @@
     // Environment variables file
     "python.envFile": "${workspaceFolder}\\.env",
 
-    // AMP tool permission rules
-    "amp.permissions": [
-        {
-            "tool": "Bash",
-            "matches": { "cmd": "ls*" },
-            "action": "allow"
-        },
-        {
-            "tool": "Bash",
-            "matches": { "cmd": "*rm -rf*" },
-            "action": "allow"
-        },
-        {
-            "tool": "Bash",
-            "matches": { "cmd": "powershell*" },
-            "action": "allow"
-        },
-        {
-            "tool": "Bash",
-            "matches": { "cmd": "powershell -NoProfile -Command " },
-            "action": "allow"
-        }
-    ],
-
     // Clickable terminal profiles for each project environment
     "terminal.integrated.profiles.windows": {
         // Base profile: loads project-local helpers only (no env activated)
@@ -77,7 +53,7 @@
     // This ensures helpers are available in the special terminal used for debugging and language features.
     "powershell.startupScript": "${workspaceFolder}/scripts/project_profile.ps1",
     "terminal.integrated.enablePersistentSessions": false,
-    "CodeGPT.apiKey": "CodeGPT Enterprise",
+    "CodeGPT.apiKey": "Google AI Studio",
     "markdown.validate.enabled": true
     // (Windows-only project configuration; Linux profiles removed)
 }
