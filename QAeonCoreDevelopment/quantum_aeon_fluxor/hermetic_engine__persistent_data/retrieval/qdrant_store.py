@@ -3,15 +3,57 @@ from typing import List, Optional, Iterable
 import os
 from qdrant_client import QdrantClient
 from qdrant_client.http.models import Distance, VectorParams, PointStruct
+from qdrant_client.http.exceptions import ResponseHandlingException
+
+
+def _normalize_url(url: str) -> str:
+    if not url.startswith("http://") and not url.startswith("https://"):
+        return "https://" + url
+    return url
+
+
+def _toggle_port(url: str) -> str:
+    # if has :6333 remove it, else add :6333
+    if ":6333" in url:
+        return url.replace(":6333", "")
+    # insert :6333 before path (if any)
+    if url.startswith("https://"):
+        rest = url[len("https://"):]
+        return "https://" + rest.split("/", 1)[0] + ":6333" + ("/" + rest.split("/", 1)[1] if "/" in rest else "")
+    if url.startswith("http://"):
+        rest = url[len("http://"):]
+        return "http://" + rest.split("/", 1)[0] + ":6333" + ("/" + rest.split("/", 1)[1] if "/" in rest else "")
+    return url
 
 
 def get_qdrant_client() -> QdrantClient:
+    # Load .env if available
+    try:
+        from dotenv import load_dotenv, find_dotenv
+        env_path = find_dotenv(usecwd=True)
+        if env_path:
+            load_dotenv(env_path)
+    except Exception:
+        pass
+
     url = os.getenv("QDRANT_URL") or os.getenv("QDRANT_ENDPOINT")
-    if not url:
-        # Fallback to example
-        url = "http://localhost:6333"
     api_key = os.getenv("QDRANT_API_KEY") or os.getenv("QDRANT_API_TOKEN")
-    return QdrantClient(url=url, api_key=api_key)
+    if not url:
+        url = "http://localhost:6333"
+    url = _normalize_url(url)
+
+    def _try(url_try: str) -> QdrantClient:
+        client = QdrantClient(url=url_try, api_key=api_key, timeout=60.0)
+        # quick ping to validate connectivity/auth
+        client.get_collections()
+        return client
+
+    # attempt primary
+    try:
+        return _try(url)
+    except Exception:
+        # attempt toggled port
+        return _try(_toggle_port(url))
 
 
 def ensure_collection(client: QdrantClient, name: str, vector_size: int) -> None:
@@ -35,10 +77,10 @@ def upsert_chunks(
     collection: str,
     vectors: List[List[float]],
     payloads: List[dict],
-    ids: Optional[List[int]] = None,
+    ids: Optional[List[str]] = None,
 ) -> None:
     if ids is None:
-        ids = list(range(1, len(vectors) + 1))
+        ids = [str(i) for i in range(1, len(vectors) + 1)]
     points = [
         PointStruct(id=i, vector=v, payload=p) for i, v, p in zip(ids, vectors, payloads)
     ]

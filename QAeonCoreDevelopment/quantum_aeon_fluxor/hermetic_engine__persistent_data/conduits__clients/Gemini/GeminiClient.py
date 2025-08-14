@@ -2,7 +2,7 @@
 
 import os
 import google.generativeai as genai
-from dotenv import load_dotenv
+from dotenv import load_dotenv, find_dotenv
 
 class GeminiClient:
     """
@@ -25,7 +25,14 @@ class GeminiClient:
             return
         
         print("--- Configuring Gemini Client ---")
-        load_dotenv() # Loads environment variables from a .env file
+        # Load .env from current or parent directories
+        try:
+            env_path = find_dotenv(usecwd=True)
+            if env_path:
+                load_dotenv(env_path)
+        except Exception:
+            # Fallback to default behavior if find_dotenv is unavailable
+            load_dotenv()
         api_key = os.getenv("GOOGLE_API_KEY")
 
         if not api_key:

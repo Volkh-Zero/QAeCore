@@ -57,7 +57,8 @@ Runtime deps:
 
 Scripts:
 - `qaf-cli` → `quantum_aeon_fluxor.main:main`
-- `qaf-index` → `quantum_aeon_fluxor.hermetic_engine__persistent_data.indexing.index_folder:index_folder`
+- `qaf-index` → `quantum_aeon_fluxor.hermetic_engine__persistent_data.indexing.index_folder:cli`
+- `qaf-search` → `quantum_aeon_fluxor.hermetic_engine__persistent_data.retrieval.search_cli:cli`
 
 ## Environment variables
 
@@ -67,6 +68,43 @@ Scripts:
 - `QDRANT_API_KEY` (required): Qdrant Cloud API key
 
 ## Quick start
+
+### Conversation example
+
+```text
+qaf-cli conversation
+:collection qaecore_noetic_v1
+:retrieval on
+:focus Boundaries across time/self/sentience
+Could you summarize the prototype inquiries we have explored?
+:insight "Boundaries unify temporal resonance, identity continuity, and sentience thresholds"
+:session S1
+:autoembed on
+:embed_last 4 qaecore_conversations_v1
+```
+
+### Index and search example
+
+```powershell
+qaf-index "c:\Users\kayno\QAeCore\QAeonCoreDevelopment\quantum_aeon_fluxor\hermetic_engine__persistent_data\Aonic Aura(Raw Data)" --collection qaecore_noetic_v1
+qaf-search "noncognitivism heat death meaning" --collection qaecore_noetic_v1 --k 5
+```
+
+### Ingest books/papers (pdf/epub/txt/md)
+
+```powershell
+# Dry run: list files that would be processed
+qaf-ingest "c:\Users\kayno\QAeCore\QAeonCoreDevelopment\quantum_aeon_fluxor\hermetic_engine__persistent_data\Aonic Aura(Raw Data)\Books" --collection qaecore_library_v1 --dry-run
+
+# Ingest and also write parsed text copies for inspection
+qaf-ingest "c:\Users\kayno\QAeCore\QAeonCoreDevelopment\quantum_aeon_fluxor\hermetic_engine__persistent_data\Aonic Aura(Raw Data)\Books" --collection qaecore_library_v1 --write-parsed
+
+# Aggressive profile with concurrency and larger batches
+qaf-ingest "c:\Users\kayno\QAeCore\QAeonCoreDevelopment\quantum_aeon_fluxor\hermetic_engine__persistent_data\Aonic Aura(Raw Data)\Books" --collection qaecore_library_v1 --profile aggressive --workers 8 --embed-concurrency 6 --embed-batch-size 48 --upsert-batch-size 1000
+
+# Recreate collection & skip unchanged chunks using local cache manifest
+qaf-ingest "c:\Users\kayno\QAeCore\QAeonCoreDevelopment\quantum_aeon_fluxor\hermetic_engine__persistent_data\Aonic Aura(Raw Data)\Books" --collection qaecore_library_v1 --recreate --profile books
+```
 
 1) Set environment (PowerShell example):
 
@@ -90,6 +128,29 @@ qaf-index "c:\Users\kayno\QAeCore\QAeonCoreDevelopment\quantum_aeon_fluxor\herme
 
 ## Archon
 
+### REPL commands
+
+- `:retain [on|off]` — toggle long-term memory writes (default off)
+- `:retrieval [on|off]` — toggle retrieval (default on)
+- `:collection <name>` — set Qdrant collection used for retrieval
+- `:collections [list|add <name>|remove <name>|clear]` — manage multi-collection retrieval
+- `:k <n>` — set top-k results merged across active collections (default 3)
+- `:search <query>` — embed and search the active collection (shows Top 5)
+- `:k <n>` — set merged top-k across active collections
+- `:context [on|off]` — show/hide the structured context block in prompts
+- `:weights [list|set <collection> <weight>|clear]` — adjust per-collection weights (1.0 default)
+- `:state` — print full JSON state
+- `:focus <topic>` — set focus topic in state; `:focus` with no args shows current
+- `:insight <summary>` — register an InsightCandidate and persist state
+- `:session <id>` — set thread/session ID for this conversation
+- `:autoembed [on|off]` — automatically embed the last turn(s) into conversations collection
+- `:embed_last [N] [collection]` — embed the last N turns into the conversations collection (default N=2)
+
+Notes:
+- When retrieval is on, each turn prints `[Retrieval] collection=<name> k=3` and embeds the top-3 snippets in the prompt context.
+- Responses and user turns are logged to the episodic transcript by default.
+- Conversational embeddings go to `qaecore_conversations_v1` by default with metadata: `session`, `role`, `turn_index`, `focus_topic`, and a short `text` snippet.
+
 - State: [archon_state.json](file:///c:/Users/kayno/QAeCore/QAeonCoreDevelopment/quantum_aeon_fluxor/hermetic_engine__persistent_data) is auto-saved.
   - Fields: `phase`, `focus_topic`, `open_questions`, `working_hypotheses`, `contradictions`, `bias_flags`, `insight_candidates`
 - Transcript: episodic logs via `episodic_log_interaction(speaker, text)` in [memory_logger.py](file:///c:/Users/kayno/QAeCore/QAeonCoreDevelopment/quantum_aeon_fluxor/hermetic_engine__persistent_data/emergent_chironomicon__coherent_vectors/memory_logger.py)
@@ -107,7 +168,14 @@ qaf-index "c:\Users\kayno\QAeCore\QAeonCoreDevelopment\quantum_aeon_fluxor\herme
   - `search_by_vector(query_vector, k)`
 - Indexer CLI: [index_folder.py](file:///c:/Users/kayno/QAeCore/QAeonCoreDevelopment/quantum_aeon_fluxor/hermetic_engine__persistent_data/indexing/index_folder.py)
   - Chunking: `max_chars=2000`, `overlap=200`
-  - Payloads: `path`, `rel_path`, `chunk_index`
+  - Payloads: `path`, `rel_path`, `chunk_index`, `text` (snippet)
+  - Stable IDs: deterministic UUIDv5 per chunk (prevents duplicates)
+- Ingest CLI: [ingest.py](file:///c:/Users/kayno/QAeCore/QAeonCoreDevelopment/quantum_aeon_fluxor/hermetic_engine__persistent_data/indexing/ingest.py)
+  - `--profile {aggressive,books,conservative}` presets
+  - `--workers`, `--embed-concurrency`, `--embed-batch-size`, `--upsert-batch-size`
+  - Local cache manifest under `.ingest_cache/<collection>.json` (skip unchanged chunks)
+- Search CLI: [search_cli.py](file:///c:/Users/kayno/QAeCore/QAeonCoreDevelopment/quantum_aeon_fluxor/hermetic_engine__persistent_data/retrieval/search_cli.py)
+  - `qaf-search "query" --collection <name> --k 5 [--json]`
 
 ## Security
 

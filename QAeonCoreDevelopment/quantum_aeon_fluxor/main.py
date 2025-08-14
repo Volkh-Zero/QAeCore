@@ -178,6 +178,9 @@ def main():
                     break
                 reply = archon.run_turn(user_input)
                 print(f"\nArchon> {reply}\n")
+            except EOFError:
+                print("\nExiting conversation.")
+                break
             except KeyboardInterrupt:
                 print("\nExiting conversation.")
                 break

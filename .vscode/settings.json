@@ -75,9 +75,7 @@
     "terminal.integrated.defaultProfile.windows": "QAeCore Base",
     // Load project profile inside the PowerShell extension's integrated console too.
     // This ensures helpers are available in the special terminal used for debugging and language features.
-    "powershell.profile.paths": [
-        "${workspaceFolder}/scripts/project_profile.ps1"
-    ],
-    "terminal.integrated.enablePersistentSessions": true
+    "powershell.startupScript": "${workspaceFolder}/scripts/project_profile.ps1",
+    "terminal.integrated.enablePersistentSessions": false
     // (Windows-only project configuration; Linux profiles removed)
 }

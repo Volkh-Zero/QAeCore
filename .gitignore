@@ -1,3 +1,8 @@
 .env 
 .gcp-oauth.keys.json
 .gemini
+# Ignore raw books and large media
+QAeonCoreDevelopment/quantum_aeon_fluxor/hermetic_engine__persistent_data/Aonic Aura(Raw Data)/Books/
+QAeonCoreDevelopment\quantum_aeon_fluxor\hermetic_engine__persistent_data\Aonic Aura(Raw Data)\TEMP
+# Ignore parsed corpus outputs
+QAeonCoreDevelopment/quantum_aeon_fluxor/hermetic_engine__persistent_data/parsed_corpus/

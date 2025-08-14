@@ -7,7 +7,8 @@ import os
 import sys
 import importlib.util
 import google.generativeai as genai
-from google.generativeai.types import HarmCategory, HarmBlockThreshold, GenerationConfig, SafetySetting
+from google.generativeai.types import HarmCategory, HarmBlockThreshold, GenerationConfig
+from google.generativeai.protos import SafetySetting
 
 # --- Constants ---
 MODEL_NAME = 'gemini-2.5-pro'

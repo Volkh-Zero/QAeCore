@@ -1,0 +1,39 @@
+Exactly — for your personal/global VS Code settings,
+C:\Users\kayno\AppData\Roaming\Code\User\settings.json is the right place to drop those tweaks.
+Here’s how it works in practice:
+
+📁 Where settings.json lives
+- Global/user scope →
+C:\Users\kayno\AppData\Roaming\Code\User\settings.json
+Changes here apply to every project and workspace you open.
+- Per‑workspace/project scope →
+Inside the .vscode folder of that project:
+<your-project>\.vscode\settings.json
+
+
+- These will override your global settings only for that folder.
+If you want your VS Code to always load with more aggressive CPU/memory/env settings for everything (parsers, Python workers, Qdrant uploads, etc.), put those JSON entries in the user settings file you mentioned.✏️ How to edit it cleanly- In VS Code, press Ctrl+Shift+P, type Preferences: Open Settings (JSON).
+- That opens the exact file at
+C:\Users\kayno\AppData\Roaming\Code\User\settings.json
+(no need to browse to it manually).
+- Paste in your tuning keys, e.g.:
+{
+  "terminal.integrated.env.windows": {
+    "UV_THREADPOOL_SIZE": "32",
+    "PYTHONUTF8": "1"
+  },
+  "files.watcherExclude": {
+    "**/node_modules/**": true,
+    "**/dist/**": true
+  },
+  "python.analysis.indexing": true,
+  "python.analysis.memory.keepLibraryAst": true
+}
+
+
+- Save — VS Code applies most of these immediately.
+💡 Tip for Python‑exclusive workflows:
+Some speedups for your stack will live in the Python extension settings or in your tool configs (pyproject.toml, .env, etc.), not just VS Code’s JSON. For example:- Increase python.analysis.memory.keepLibraryAst to keep parsed libs in memory.
+- Use "python.linting.enabled": false if your workflow runs lint in CI, freeing resources locally.
+- Point python.defaultInterpreterPath directly at your tuned venv to avoid re‑resolving.
+If you want, I can bundle you a Python‑only, high‑throughput settings.json profile that focuses on maxing CPU and I/O for parsing and embedding pipelines, so your 13700K actually breaks a sweat. Would you like me to draft that next?

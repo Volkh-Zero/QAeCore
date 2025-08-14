@@ -31,7 +31,7 @@ class ArchonState(BaseModel):
 
     def save(self, path: Path = STATE_FILE) -> None:
         self.last_updated = datetime.utcnow().isoformat()
-        data = json.loads(self.model_json(indent=2))
+        data = self.model_dump()
         path.write_text(json.dumps(data, indent=2), encoding="utf-8")
 
     @classmethod

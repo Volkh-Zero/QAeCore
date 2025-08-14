@@ -10,6 +10,7 @@ from quantum_aeon_fluxor.hermetic_engine__persistent_data.retrieval.qdrant_store
     ensure_collection,
     upsert_chunks,
 )
+from quantum_aeon_fluxor.utils.hash import chunk_uuid
 
 # Simple text file matcher (you can expand as needed)
 TEXT_EXTS = {".md", ".txt", ".py", ".json"}
@@ -54,6 +55,15 @@ def index_folder(
     if not root.exists():
         raise FileNotFoundError(f"Folder not found: {root}")
 
+    # Ensure env is loaded (for GOOGLE_API_KEY and QDRANT_*)
+    try:
+        from dotenv import load_dotenv, find_dotenv
+        env_path = find_dotenv(usecwd=True)
+        if env_path:
+            load_dotenv(env_path)
+    except Exception:
+        pass
+
     embedder = GeminiEmbedder()
     client = get_qdrant_client()
     ensure_collection(client, collection, embedder.dim)
@@ -61,15 +71,19 @@ def index_folder(
     docs = read_text_files(root)
     all_chunks: List[str] = []
     payloads: List[dict] = []
+    ids: List[str] = []
 
     for path, text in docs:
         chunks = chunk_text(text, max_chars=max_chars, overlap=overlap)
         for i, ch in enumerate(chunks):
+            cid = chunk_uuid(path, i, ch)
+            ids.append(cid)
             all_chunks.append(ch)
             payloads.append({
                 "path": str(path),
                 "chunk_index": i,
                 "rel_path": str(path.relative_to(root)),
+                "text": ch[:1000]
             })
 
     if not all_chunks:
@@ -77,11 +91,11 @@ def index_folder(
         return
 
     vectors = embedder.embed_texts(all_chunks)
-    upsert_chunks(get_qdrant_client(), collection, vectors, payloads)
+    upsert_chunks(get_qdrant_client(), collection, vectors, payloads, ids=ids)
     print(f"Indexed {len(all_chunks)} chunks from {len(docs)} files into collection '{collection}'.")
 
 
-if __name__ == "__main__":
+def cli():
     import argparse
 
     parser = argparse.ArgumentParser(description="Index a folder into Qdrant using Gemini embeddings.")
@@ -92,3 +106,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     index_folder(args.folder, collection=args.collection, max_chars=args.max_chars, overlap=args.overlap)
+
+
+if __name__ == "__main__":
+    cli()
