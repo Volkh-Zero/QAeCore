@@ -54,7 +54,7 @@ def _get_safety_settings(block_none=True):
 
     Args:
         block_none (bool): If True, sets all harm categories to BLOCK_NONE.
-                           Otherwise, uses default settings.
+        Otherwise, uses default settings.
 
     Returns:
         list: A list of SafetySetting objects.

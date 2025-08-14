@@ -1,0 +1,71 @@
+Here’s the end-to-end flow when you run the Archon in REPL (“conversation” mode), and which scripts are involved.
+
+Entrypoint and session startup
+
+You launch: qaf-cli conversation
+Entrypoint: main.py
+It constructs the Archon and starts the REPL loop.
+Archon initialization
+
+Class: archon.py
+Loads state from disk: state.py (JSON at hermetic_engine__persistent_data/state/archon_state.json)
+Instantiates Gemini LLM client: GeminiClient.py (reads GOOGLE_API_KEY; find_dotenv used so your top-level .env works)
+Initializes retrieval controls (single or multi-collection), and conversational embedding settings.
+Each REPL turn
+
+Command handling (if input starts with :)
+Commands are interpreted by archon.py
+Examples:
+Retrieval: :retrieval on/off, :collection , :collections add/remove/list/clear, :k , :context on/off, :weights set
+State control: :focus , :session , :state
+Retrieval helpers: :search , :expand
+Conversational embeddings: :autoembed on/off, :embed_last [N] [collection]
+Retrieval context (if retrieval is enabled)
+Multi-collection list is resolved (either the single default collection, or the active list).
+For each active collection, the Archon embeds the user input and searches:
+Query embed+search: search_text.py
+Qdrant client helpers: qdrant_store.py
+Per-collection weights (if set) are applied to scores; top-k across all collections are merged and formatted as a structured context block:
+=== Context === header
+Sources and k listed
+Top lines with [score], (collection), path, and a compact snippet
+Prompt construction
+The composed input is user_input + (optional structured context block)
+Adapter: bridge.py calls the prompt engine to build the final prompt string
+Prompt engine used: YES — qacore_prompt_engine.py
+It’s actively used to generate consciousness-inquiry style prompts (generate_consciousness_inquiry)
+LLM call (Gemini)
+GeminiClient.py sends the prompt to gemini-2.5-pro and returns text
+Transcript logging
+Episodic transcript is written after each turn:
+memory_logger.py
+Log lines for both Volkh and Archon
+In-memory conversation history is also kept inside Archon for optional embedding later.
+Optional long-term memory of the response
+If retain is on (globally or per-turn), the response is persisted as a blob:
+longterm.py
+Optional conversational embeddings
+If :autoembed is on, the Archon embeds the last user+archon turns into a dedicated conversations collection (default qaecore_conversations_v1)
+Uses gemini_embedder.py
+Upserts via qdrant_store.py
+Metadata: session, role, turn_index, focus_topic, and a short snippet
+You can also embed manually with :embed_last [N] [collection]
+Where ingestion sits (not in REPL)
+
+Corpus ingestion is separate (CLI invoked, not called by the REPL):
+Indexing small code/text dirs: index_folder.py → qaf-index
+Ingesting books/papers: ingest.py → qaf-ingest
+Profiles, parallel parsing, concurrent embedding, local cache, chunk batching
+Quick map: scripts underpinning the Archon turn
+
+REPL and loop: main.py
+Orchestrator and commands: archon.py
+State model: state.py
+Prompt engine adapter: bridge.py
+Prompt engine (QAeCore): qacore_prompt_engine.py
+LLM client: GeminiClient.py
+Retrieval:
+search_text.py
+qdrant_store.py
+Transcript logging: memory_logger.py
+qacore_prompt_engine.py is invoked via bridge.py to create the final prompt string passed to Gemini for each turn.
