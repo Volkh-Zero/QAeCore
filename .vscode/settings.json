@@ -1,0 +1,83 @@
+{
+    // Working directory for the integrated terminal (portable form)
+    // Optional: comment out or remove this line to have VS Code open terminals in the workspace root
+    // "terminal.integrated.cwd": "${workspaceFolder}/QAeonCoreDevelopment",
+
+    // Remove / override interpreter so a plain system shell opens (you can pick env manually from the Python status bar)
+    // "python.defaultInterpreterPath": "${workspaceFolder}\\QAeonCoreDevelopment\\.venv\\Scripts\\python.exe",
+
+    // Disable auto environment activation so terminals start as plain system shells
+    "python.terminal.activateEnvironment": false,
+
+    // (Optional) Force Python extension NOT to auto-run activation scripts even if an interpreter is later chosen
+    "python.terminal.activateEnvInCurrentTerminal": false,
+    // Environment variables file
+    "python.envFile": "${workspaceFolder}\\.env",
+
+    // AMP tool permission rules
+    "amp.permissions": [
+        {
+            "tool": "Bash",
+            "matches": { "cmd": "ls*" },
+            "action": "allow"
+        },
+        {
+            "tool": "Bash",
+            "matches": { "cmd": "*rm -rf*" },
+            "action": "allow"
+        },
+        {
+            "tool": "Bash",
+            "matches": { "cmd": "powershell*" },
+            "action": "allow"
+        },
+        {
+            "tool": "Bash",
+            "matches": { "cmd": "powershell -NoProfile -Command " },
+            "action": "allow"
+        }
+    ],
+
+    // Clickable terminal profiles for each project environment
+    "terminal.integrated.profiles.windows": {
+        // Base profile: loads project-local helpers only (no env activated)
+        "QAeCore Base": {
+            "path": "pwsh.exe",
+            "args": [
+                "-NoExit",
+                "-ExecutionPolicy","Bypass",
+                "-Command",
+                ". '${workspaceFolder}/scripts/project_profile.ps1'; Write-Host '[profile] QAeCore project profile loaded' -ForegroundColor DarkCyan"
+            ],
+            "icon": "terminal-powershell"
+        },
+
+        "QAeCore Dev": {
+            "path": "pwsh.exe",
+            "args": [
+                "-NoExit",
+                "-Command",
+                ". '${workspaceFolder}/scripts/project_profile.ps1'; Use-QAeCoreDev"
+            ],
+            "icon": "code"
+        },
+        "Docs MCP": {
+            "path": "pwsh.exe",
+            "args": [
+                "-NoExit",
+                "-Command",
+                ". '${workspaceFolder}/scripts/project_profile.ps1'; Use-DocsMCP"
+            ],
+            "icon": "book"
+        }
+    },
+    // Use the base profile so every new terminal in this workspace has qdev/qdocs/envstat
+    "terminal.integrated.defaultProfile.windows": "QAeCore Base",
+    // Load project profile inside the PowerShell extension's integrated console too.
+    // This ensures helpers are available in the special terminal used for debugging and language features.
+    "powershell.profile.paths": [
+        "${workspaceFolder}/scripts/project_profile.ps1"
+    ],
+    "terminal.integrated.enablePersistentSessions": true
+    // (Windows-only project configuration; Linux profiles removed)
+}

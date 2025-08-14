@@ -5,5 +5,8 @@ This package contains various agent implementations and prototypes
 that can be used within the QAeCore ecosystem.
 """
 
-# Import base agent and other key components
-from .Moirai(CustomAgents).base_agent import BaseAgent
+__display_name__ = "Chora (Agent Prototypes)"
+
+# Re-export BaseAgent from Moirai custom agents
+from .moirai__custom_agents.base_agent import BaseAgent
+

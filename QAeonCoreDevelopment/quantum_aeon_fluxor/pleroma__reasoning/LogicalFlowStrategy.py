@@ -2,7 +2,7 @@
 
 from .BaseStrategy import BaseStrategy
 # Import our new client. The path may need adjustment based on your final structure.
-from ..Hermetic_Engine.Conduits.GeminiClient import GeminiClient
+from quantum_aeon_fluxor.hermetic_engine__persistent_data.conduits__clients.Gemini.GeminiClient import GeminiClient
 
 class LogicalFlowStrategy(BaseStrategy):
     """

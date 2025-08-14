@@ -15,7 +15,7 @@ MODEL_NAME = 'gemini-2.5-pro'
 # Import qacore_prompt_engine using importlib
 qacore_path = os.path.join(
     os.path.dirname(__file__),
-    "Syzygy(Framework_Integration)",
+    "syzygy__conversational_framework",
     "Integration_Prototyping",
     "qacore_prompt_engine.py"
 )

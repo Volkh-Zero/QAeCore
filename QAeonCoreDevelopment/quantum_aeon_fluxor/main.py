@@ -14,7 +14,7 @@ if project_root not in sys.path:
 # Import qacore_prompt_engine using importlib
 qacore_path = os.path.join(
     os.path.dirname(__file__),
-    "Syzygy(Framework_Integration)",
+    "syzygy__conversational_framework",
     "Integration_Prototyping",
     "qacore_prompt_engine.py"
 )
@@ -154,7 +154,7 @@ def main():
     parser = argparse.ArgumentParser(description="Run the Quantum Aeon Core generative model.")
     parser.add_argument(
         'mode',
-        choices=['basic', 'demo'],
+        choices=['basic', 'demo', 'conversation'],
         nargs='?',
         default='basic',
         help="The mode to run the script in: 'basic' for a single prompt, 'demo' for the QAeCore showcase. (default: basic)"
@@ -166,6 +166,21 @@ def main():
 
     if args.mode == 'demo':
         run_qacore_demo(model)
+    elif args.mode == 'conversation':
+        from quantum_aeon_fluxor.archon__supervisor_agent.archon import Archon
+        archon = Archon()
+        print("Entering Archon conversation mode. Type 'exit' to quit.\n")
+        while True:
+            try:
+                user_input = input("Volkh> ").strip()
+                if user_input.lower() in {"exit", "quit"}:
+                    print("Exiting conversation.")
+                    break
+                reply = archon.run_turn(user_input)
+                print(f"\nArchon> {reply}\n")
+            except KeyboardInterrupt:
+                print("\nExiting conversation.")
+                break
     else:  # 'basic' is the default
         run_generative_model(model)
 

@@ -17,8 +17,8 @@ from azure.core.exceptions import HttpResponseError
 # Import base_agent using importlib to handle special characters in path
 base_agent_path = os.path.join(
     os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
-    "Chora(AgentPrototypes)",
-    "Moirai(CustomAgents)",
+    "chora__agent_prototypes",
+    "moirai__custom_agents",
     "base_agent.py"
 )
 
