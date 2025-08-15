@@ -9,7 +9,7 @@ class BaseStrategy(ABC):
     This class defines the common interface that all concrete strategies,
     such as LogicalFlowStrategy or TreeOfThoughtsStrategy, must implement.
     This ensures that the StrategyManager can use any strategy interchangeably.
-   
+
     """
 
     @property
@@ -30,7 +30,7 @@ class BaseStrategy(ABC):
 
         Returns:
             dict: A dictionary containing the result of the strategy,
-                  including the final output, the reasoning path,
-                  and any performance metrics.
+                including the final output, the reasoning path,
+                and any performance metrics.
         """
         pass

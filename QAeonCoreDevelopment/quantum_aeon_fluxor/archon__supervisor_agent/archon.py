@@ -1,5 +1,4 @@
 from __future__ import annotations
-from typing import Optional
 
 from quantum_aeon_fluxor.archon__supervisor_agent.state import ArchonState
 from quantum_aeon_fluxor.syzygy__conversational_framework import __display_name__ as SYZ_NAME  # noqa: F401
@@ -8,6 +7,7 @@ from quantum_aeon_fluxor.hermetic_engine__persistent_data import (
     episodic_log_interaction,
     GeminiClient,
 )
+from quantum_aeon_fluxor.utils.metrics import time_block, log_event, log_counter
 from quantum_aeon_fluxor.hermetic_engine__persistent_data.longterm import write_blob
 
 
@@ -58,7 +58,7 @@ class Archon:
             ids = []
             sess = self.state.thread_id or "default"
             base = Path(f"session:{sess}")
-            start_index = 0
+            # note: historical variable removed; index derived from enumerate
             # include their index relative to current history length
             for idx, (speaker, text) in enumerate(turns):
                 texts.append(text)
@@ -85,12 +85,13 @@ class Archon:
         # Optionally fetch retrieval context
         retrieval_note = ""
         if self.retrieval_enabled:
+            from time import perf_counter
+            t0 = perf_counter()
             try:
                 from quantum_aeon_fluxor.hermetic_engine__persistent_data.retrieval.search_text import search_text
-                # Determine collections to use
                 collections = self.active_collections if self.active_collections else [self.collection]
                 print(f"[Retrieval] collections={collections} k={self.retrieve_k}")
-                merged: list[tuple[float, dict, str]] = []  # (score, payload, collection)
+                merged: list[tuple[float, dict, str]] = []
                 for coll in collections:
                     try:
                         hits = search_text(user_input, collection=coll, k=self.retrieve_k)
@@ -98,11 +99,12 @@ class Archon:
                         for score, payload in hits:
                             merged.append((score * w, payload, coll))
                     except Exception as e:
+                        log_event("archon", "retrieval_error", collection=coll, error=str(e))
                         print(f"[Retrieval warn] collection={coll} error={e}")
-                # sort by weighted score desc and take top k overall
                 merged.sort(key=lambda x: x[0], reverse=True)
                 top = merged[: self.retrieve_k]
                 self.last_retrieval = top
+                log_event("archon", "retrieval_done", collections=collections, total_candidates=len(merged), top_k=len(top))
                 if top and self.context_block_enabled:
                     ctx_lines = []
                     for score, payload, coll in top:
@@ -112,27 +114,35 @@ class Archon:
                             snippet = snippet[:240] + "…"
                         ctx_lines.append(f"- [{score:.3f}] ({coll}) {path} :: {snippet}")
                     retrieval_note = ("\n\n=== Context ===\n"
-                                      + f"Sources: {', '.join(collections)} | k={self.retrieve_k}\n"
-                                      + "\n".join(ctx_lines)
-                                      + "\n=== End Context ===")
+                                    + f"Sources: {', '.join(collections)} | k={self.retrieve_k}\n"
+                                    + "\n".join(ctx_lines)
+                                    + "\n=== End Context ===")
             except Exception as e:
                 retrieval_note = f"\n\n(Context retrieval unavailable: {e})"
+                log_event("archon", "retrieval_fatal", error=str(e))
+            finally:
+                from time import perf_counter as _pc
+                dur_ms = (_pc() - t0) * 1000
+                log_event("archon", "retrieval_latency", duration_ms=round(dur_ms,2))
 
         # Compose prompt using Syzygy bridge
         composed_input = user_input + retrieval_note
         # Prepare a brief history window for mode selection
         history_texts = [t for _, t in self.history[-6:]]
         dl = getattr(self, "forced_depth", None) or depth_level
-        prompt = compose_prompt(
-            composed_input,
-            focus_topic=self.state.focus_topic,
-            depth_level=dl,
-            recent_history=history_texts,
-            forced_mode=getattr(self, "forced_mode", None),
-        )
+        with time_block("archon", "compose_prompt"):
+            prompt = compose_prompt(
+                composed_input,
+                focus_topic=self.state.focus_topic,
+                depth_level=dl,
+                recent_history=history_texts,
+                forced_mode=getattr(self, "forced_mode", None),
+            )
 
         # Query Gemini
-        response_text = self.client.query(prompt)
+        with time_block("archon", "model_query"):
+            response_text = self.client.query(prompt)
+        log_counter("archon", "turn_completed", value=1)
 
         # Log transcript and update in-memory history
         episodic_log_interaction("Volkh", user_input)
@@ -154,23 +164,29 @@ class Archon:
             self.state.focus_topic = user_input[:96]
         if "contradiction" in response_text.lower():
             self.state.flag_contradiction("Model mentioned contradiction in latest turn")
-        self.state.save()
+        with time_block("archon", "state_save"):
+            self.state.save()
+        log_event("archon", "turn_persisted", focus_topic=self.state.focus_topic, insights=len(self.state.insight_candidates))
         return response_text
 
     def _handle_command(self, cmd: str) -> str:
         parts = cmd.strip().split()
+        if not parts:
+            return "Empty command"
         head = parts[0].lower()
+
+        def _bool(val: str) -> bool:
+            return val.lower() in {"on", "true", "1"}
+
         if head in (":retain", ":r"):
             if len(parts) == 1:
                 return f"retain={'on' if self.retain_responses else 'off'}"
-            val = parts[1].lower()
-            self.retain_responses = val in ("on", "true", "1")
+            self.retain_responses = _bool(parts[1])
             return f"retain set to {'on' if self.retain_responses else 'off'}"
         if head in (":retrieval", ":rt"):
             if len(parts) == 1:
                 return f"retrieval={'on' if self.retrieval_enabled else 'off'} collection={self.collection}"
-            val = parts[1].lower()
-            self.retrieval_enabled = val in ("on", "true", "1")
+            self.retrieval_enabled = _bool(parts[1])
             return f"retrieval set to {'on' if self.retrieval_enabled else 'off'}"
         if head in (":collection", ":col"):
             if len(parts) == 1:
@@ -178,9 +194,8 @@ class Archon:
             self.collection = parts[1]
             return f"collection set to {self.collection}"
         if head in (":collections", ":cols"):
-            # :collections list | add <name> | remove <name> | clear
             if len(parts) == 1 or parts[1] == "list":
-                return f"active_collections={self.active_collections} (empty means using single collection={self.collection})"
+                return f"active_collections={self.active_collections} (empty→single {self.collection})"
             sub = parts[1].lower()
             if sub == "add" and len(parts) >= 3:
                 name = parts[2]
@@ -193,7 +208,7 @@ class Archon:
                 return f"collections={self.active_collections}"
             if sub == "clear":
                 self.active_collections = []
-                return "collections cleared (back to single collection mode)"
+                return "collections cleared"
             return "Usage: :collections [list|add <name>|remove <name>|clear]"
         if head in (":k", ":topk"):
             if len(parts) == 1 or not parts[1].isdigit():
@@ -203,28 +218,24 @@ class Archon:
         if head in (":context", ":ctx"):
             if len(parts) == 1:
                 return f"context_block={'on' if self.context_block_enabled else 'off'}"
-            val = parts[1].lower()
-            self.context_block_enabled = val in ("on", "true", "1")
+            self.context_block_enabled = _bool(parts[1])
             return f"context_block set to {'on' if self.context_block_enabled else 'off'}"
         if head in (":weights", ":wts"):
-            # :weights list | set <collection> <weight> | clear
             if len(parts) == 1 or parts[1] == 'list':
-                return f"weights={self.collection_weights or {}} (1.0 default when unset)"
+                return f"weights={self.collection_weights or {}}"
             sub = parts[1].lower()
             if sub == 'set' and len(parts) >= 4:
                 coll = parts[2]
                 try:
-                    w = float(parts[3])
+                    self.collection_weights[coll] = max(0.0, float(parts[3]))
                 except ValueError:
-                    return "Usage: :weights set <collection> <weight> (float)"
-                self.collection_weights[coll] = max(0.0, w)
+                    return "Usage: :weights set <collection> <weight>"
                 return f"weights={self.collection_weights}"
             if sub == 'clear':
                 self.collection_weights = {}
-                return "weights cleared (all default to 1.0)"
+                return "weights cleared"
             return "Usage: :weights [list|set <collection> <weight>|clear]"
         if head in (":mode", ":m"):
-            # :mode [set <QAeMode>|auto]
             if len(parts) == 1:
                 return f"mode={'auto' if not getattr(self, 'forced_mode', None) else self.forced_mode}"
             if parts[1].lower() == 'set' and len(parts) >= 3:
@@ -236,7 +247,6 @@ class Archon:
                 return f"mode forced to {val}"
             return "Usage: :mode [set <QAeMode>|auto]"
         if head in (":depth", ":d"):
-            # :depth [surface|intermediate|deep|transcendent]
             if len(parts) == 1:
                 cur = getattr(self, 'forced_depth', None)
                 return f"depth={'auto' if not cur else cur}"
@@ -251,7 +261,6 @@ class Archon:
         if head in (":state", ":s"):
             return self.state.model_dump_json(indent=2)
         if head in (":focus", ":f"):
-            # Get or set the focus topic
             if len(parts) == 1:
                 return f"focus_topic={self.state.focus_topic!r}"
             topic = cmd.split(" ", 1)[1].strip()
@@ -281,23 +290,20 @@ class Archon:
         if head in (":autoembed", ":ae"):
             if len(parts) == 1:
                 return f"autoembed={'on' if self.autoembed_enabled else 'off'} collection={self.conv_collection}"
-            val = parts[1].lower()
-            if val in ("on", "true", "1"):
+            if _bool(parts[1]):
                 self.autoembed_enabled = True
                 return f"autoembed set to on (collection={self.conv_collection})"
-            if val in ("off", "false", "0"):
+            if parts[1].lower() in {"off","false","0"}:
                 self.autoembed_enabled = False
                 return "autoembed set to off"
             return "Usage: :autoembed [on|off]"
         if head in (":embed_last", ":el"):
-            # :embed_last [N] [collection]
             n = 2
             if len(parts) >= 2 and parts[1].isdigit():
                 n = max(1, int(parts[1]))
             turns = self.history[-n:]
             if not turns:
                 return "No turns to embed."
-            # optional collection override
             if len(parts) >= 3:
                 self.conv_collection = parts[2]
             self._embed_turns(turns)
@@ -328,9 +334,8 @@ class Archon:
             except Exception as e:
                 return f"Search error: {e}"
         if head in (":expand", ":x"):
-            # :expand <n> — print full payload of nth item from last retrieval
             if len(parts) < 2 or not parts[1].isdigit():
-                return "Usage: :expand <n> (from last retrieval)"
+                return "Usage: :expand <n>"
             idx = int(parts[1]) - 1
             if not self.last_retrieval or idx < 0 or idx >= len(self.last_retrieval):
                 return "No such item in last retrieval."
@@ -340,4 +345,4 @@ class Archon:
                 return json.dumps({"score": score, "collection": coll, "payload": payload}, indent=2)
             except Exception as e:
                 return f"Expand error: {e}"
-        return "Unknown command. Available: :retain, :retrieval, :collection, :collections, :k, :context, :weights, :state, :focus, :insight, :search, :expand"  }```
+        return "Unknown command. Available: :retain, :retrieval, :collection, :collections, :k, :context, :weights, :state, :focus, :insight, :search, :expand"

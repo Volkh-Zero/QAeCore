@@ -25,6 +25,8 @@ qaf-cli = "quantum_aeon_fluxor.main:main"
 qaf-index = "quantum_aeon_fluxor.hermetic_engine__persistent_data.indexing.index_folder:cli"
 qaf-search = "quantum_aeon_fluxor.hermetic_engine__persistent_data.retrieval.search_cli:cli"
 qaf-ingest = "quantum_aeon_fluxor.hermetic_engine__persistent_data.indexing.ingest:cli"
+qaf-metrics = "quantum_aeon_fluxor.utils.metrics_summary:cli"
+qaf-calibrate = "scripts.calibrate_embedding:main"
 
 [build-system]
 requires = ["hatchling"]

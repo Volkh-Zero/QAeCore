@@ -2,6 +2,8 @@
 
 import os
 import google.generativeai as genai
+from time import perf_counter
+from quantum_aeon_fluxor.utils.metrics import log_event
 from dotenv import load_dotenv, find_dotenv
 
 class GeminiClient:
@@ -53,11 +55,15 @@ class GeminiClient:
         Returns:
             str: The text content of the model's response.
         """
+        start = perf_counter()
         try:
             response = self.model.generate_content(prompt)
+            dur_ms = (perf_counter() - start) * 1000
+            log_event("gemini", "query", duration_ms=round(dur_ms,2), ok=True, chars=len(prompt))
             return response.text
         except Exception as e:
-            # Basic error handling. In a production system, this would be more robust.
+            dur_ms = (perf_counter() - start) * 1000
+            log_event("gemini", "query", duration_ms=round(dur_ms,2), ok=False, error=str(e))
             print(f"An error occurred while querying Gemini: {e}")
             return f"Error: Could not get a response from the model. Details: {e}"
 

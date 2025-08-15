@@ -1,4 +1,4 @@
-# Quantum Aeon Fluxor — User Guide (v0.1.0)
+# Quantum Aeon Fluxor — User Guide (v0.2.0)
 
 A concise guide to the QAF architecture, components, and how to run and index your corpus.
 
@@ -56,16 +56,30 @@ Runtime deps:
 - `google-generativeai`, `python-dotenv`, `pydantic`, `qdrant-client`
 
 Scripts:
-- `qaf-cli` → `quantum_aeon_fluxor.main:main`
-- `qaf-index` → `quantum_aeon_fluxor.hermetic_engine__persistent_data.indexing.index_folder:cli`
-- `qaf-search` → `quantum_aeon_fluxor.hermetic_engine__persistent_data.retrieval.search_cli:cli`
+- `qaf-cli` → conversation REPL / Archon
+- `qaf-index` → legacy/basic folder indexer (pure deterministic chunk → embed → upsert)
+- `qaf-ingest` → enhanced ingestion (profiles, concurrency, retries, auto‑tuning aware)
+- `qaf-search` → vector search CLI
+- `qaf-metrics` → metrics & tuning summary CLI
+- `qaf-calibrate` → embedding batch/worker calibration & tuning file generator
 
 ## Environment variables
 
+Core:
 - `GOOGLE_API_KEY` (required): Google AI key for Gemini chat + embeddings
 - `GEMINI_EMBED_MODEL` (optional): defaults to `gemini-embedding-001` (3072 dims)
 - `QDRANT_URL` (required): Qdrant REST endpoint including `:6333` (e.g. `https://...cloud.qdrant.io:6333`)
 - `QDRANT_API_KEY` (required): Qdrant Cloud API key
+
+Observability & Metrics:
+- `QAECORE_METRICS_DIR` (optional): directory for JSONL metric streams (default: `./metrics`)
+- `QAECORE_METRICS_ROTATE_DAILY` (flag): if set, rotate per day: `<stream>-YYYYMMDD.jsonl`
+
+Auto‑Tuning / Calibration:
+- `QAECORE_DISABLE_TUNING` (flag): skip applying `.qaf_tuning.json` during ingest (use explicit CLI values)
+- `QAECORE_TUNING_DRIFT_THRESHOLD` (float, default `0.10`): relative change in chunk_size/overlap triggering retune suggestion
+
+Optional local `.env` supported (best‑effort load) — do not commit secrets.
 
 ## Quick start
 
@@ -99,8 +113,10 @@ qaf-ingest "c:\Users\kayno\QAeCore\QAeonCoreDevelopment\quantum_aeon_fluxor\herm
 # Ingest and also write parsed text copies for inspection
 qaf-ingest "c:\Users\kayno\QAeCore\QAeonCoreDevelopment\quantum_aeon_fluxor\hermetic_engine__persistent_data\Aonic Aura(Raw Data)\Books" --collection qaecore_library_v1 --write-parsed
 
-# Aggressive profile with concurrency and larger batches
-qaf-ingest "c:\Users\kayno\QAeCore\QAeonCoreDevelopment\quantum_aeon_fluxor\hermetic_engine__persistent_data\Aonic Aura(Raw Data)\Books" --collection qaecore_library_v1 --profile aggressive --workers 8 --embed-concurrency 6 --embed-batch-size 48 --upsert-batch-size 1000
+# Aggressive profile with concurrency and larger batches (pre‑tuning override)
+qaf-ingest "c:\Users\kayno\QAeCore\QAeonCoreDevelopment\quantum_aeon_fluxor\hermetic_engine__persistent_data\Aonic Aura(Raw Data)\Books" \
+  --collection qaecore_library_v1 --profile aggressive \
+  --workers 8 --embed-concurrency 6 --embed-batch-size 48 --upsert-batch-size 1000
 
 # Recreate collection & skip unchanged chunks using local cache manifest
 qaf-ingest "c:\Users\kayno\QAeCore\QAeonCoreDevelopment\quantum_aeon_fluxor\hermetic_engine__persistent_data\Aonic Aura(Raw Data)\Books" --collection qaecore_library_v1 --recreate --profile books
@@ -167,7 +183,7 @@ Notes:
   - `upsert_chunks(vectors, payloads)`
   - `search_by_vector(query_vector, k)`
 - Indexer CLI: [index_folder.py](file:///c:/Users/kayno/QAeCore/QAeonCoreDevelopment/quantum_aeon_fluxor/hermetic_engine__persistent_data/indexing/index_folder.py)
-  - Chunking: `max_chars=2000`, `overlap=200`
+  - Chunking: `max_chars=2500`, `overlap=200` (updated default for improved throughput)
   - Payloads: `path`, `rel_path`, `chunk_index`, `text` (snippet)
   - Stable IDs: deterministic UUIDv5 per chunk (prevents duplicates)
 - Ingest CLI: [ingest.py](file:///c:/Users/kayno/QAeCore/QAeonCoreDevelopment/quantum_aeon_fluxor/hermetic_engine__persistent_data/indexing/ingest.py)
@@ -183,12 +199,113 @@ Notes:
 - Redaction markers in the repo indicate sensitive values; never copy them into code.
 
 ## Roadmap
+Completed (recent):
+- Metrics subsystem (JSONL streams: `archon`, `gemini`, `ingest`, `calibrate`)
+- Latency & counter events with CLI summary (`qaf-metrics`)
+- Embedding ingest batching + concurrency + retry with structured latency
+- Auto‑tuning ingestion (applies calibrated `batch_size`/`workers` when defaults used)
+- Calibration tool (`qaf-calibrate`) generating `configs/.qaf_tuning.json` (dataset hash + stats + run_id)
+- Drift detection & retune recommendation (chunk/overlap relative change)
+- Tuning age tracking (age_days) + disable/force flags
 
-- Conversation commands (`:retain`, `:state`, `:search`)
-- Qdrant search CLI and Archon retrieval hook
-- Adversarial agent harness
-- MCP integration for persistent docs server
+Planned / Upcoming:
+- Event filtering / grep in metrics CLI
+- Archon turn‑level instrumentation (per‑turn retrieval & model timing aggregation)
+- Retrieval quality metrics (similarity distribution, token usage stats)
+- Reasoning strategy plugin registry
+- Schema versioning for state & memory artifacts
+- Evaluation harness / golden conversational tests
+- Multi‑dimensional tuning sweeps (batch_size × workers grid)
+- Advanced percentile reporting (p75/p99) and throughput histograms
 
 ## Changelog
+2025-08-13 — Initial scaffold: Archon, state, memory, Syzygy bridge, Qdrant indexing, CLI.
+2025-08-14 — Metrics foundation (`utils.metrics`), ingestion batching + concurrency, retries, latency events; `qaf-metrics` v1.
+2025-08-15 — Calibration (`qaf-calibrate`), tuning recommendation file, auto‑apply tuning on ingest, drift detection, tuning age, `--show-tuning-only` summary flag, daily metrics rotation option.
 
-- 2025-08-13 — Initial scaffold: Archon, state, memory, Syzygy bridge, Qdrant indexing, CLI.
+---
+
+## Observability & Metrics
+
+The framework emits newline‑delimited JSON (JSONL) metric events (pure stdlib, no vendor lock‑in):
+
+Streams:
+- `archon` — conversation loop timing (prompt composition, model query, state save) (expanding soon)
+- `gemini` — raw model client latencies
+- `ingest` — indexing / embedding batches, tuning application, retries
+- `calibrate` — embedding benchmark batches and final recommendation
+
+Core event patterns:
+- `<phase>:start` / `<phase>:end` with `duration_ms` + `status`
+- `embed_batch` latency events (per batch) with `batch_size`
+- `tuning_applied`, `tuning_mismatch`, `tuning_retune_recommended` (ingest)
+- `recommendation` (calibration output)
+
+View summaries:
+```powershell
+qaf-metrics                       # default summary (archon, gemini, ingest)
+qaf-metrics --streams ingest --last 40
+qaf-metrics --streams calibrate --raw --last 5   # raw JSON lines
+qaf-metrics --show-tuning-only    # print only current tuning recommendation
+```
+
+Daily rotation (opt‑in) produces files like `ingest-20250815.jsonl` when `QAECORE_METRICS_ROTATE_DAILY` is set.
+
+## Calibration & Auto‑Tuning Workflow
+
+1. Run calibration on a representative folder (does NOT write to Qdrant):
+```powershell
+qaf-calibrate "path\to\raw_corpus" --sample 200 --batch-sizes 4 8 16 32 --workers 4 --progress
+```
+2. Inspect recommendation (saved to `configs/.qaf_tuning.json`):
+```powershell
+qaf-metrics --show-tuning-only
+```
+3. Ingest normally (leave defaults `--embed-batch-size 16 --workers 4`) and the tuned values auto‑apply if dataset hash and chunk params match. Override explicitly to bypass.
+4. If you intentionally change `chunk_size` or `overlap` beyond `QAECORE_TUNING_DRIFT_THRESHOLD`, ingest emits a `tuning_retune_recommended` event.
+5. Force re‑calibration ignoring existing tuning file:
+```powershell
+qaf-calibrate path\to\raw_corpus --force-retune
+```
+
+Tuning file fields:
+```json
+{
+  "batch_size": 32,
+  "workers": 4,
+  "throughput_chunks_per_s": 185.4,
+  "mean_batch_ms": 172.1,
+  "stddev_batch_ms": 9.3,
+  "sample": 200,
+  "generated_at": "2025-08-15T10:42:11Z",
+  "strategy": "throughput_then_stability",
+  "chunk_size": 2500,
+  "overlap": 200,
+  "dataset_hash": "<sha1>",
+  "run_id": "abc123def456"
+}
+```
+
+Disable auto‑tuning entirely:
+```powershell
+$env:QAECORE_DISABLE_TUNING=1
+qaf-ingest path --collection my_coll
+```
+
+Adjust drift sensitivity (e.g. 5%):
+```powershell
+$env:QAECORE_TUNING_DRIFT_THRESHOLD=0.05
+```
+
+## Ingestion Enhancements Overview
+
+Features now included in `qaf-ingest` / indexer path:
+- Deterministic chunk UUIDv5 (idempotent upserts; no duplicates on re‑run)
+- Batch embedding with concurrency; per‑batch latency metrics
+- Exponential retries for embedding failures (events: `embed:error`)
+- Throughput & summary event (`ingest_summary`) (planned extension)
+- Auto‑application of calibrated `batch_size` and `workers` when user leaves defaults
+- Drift detection for chunk size / overlap changes with retune suggestion
+- Age tracking of tuning recommendation (age_days) for maintenance scheduling
+
+---

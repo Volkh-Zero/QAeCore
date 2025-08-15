@@ -1,0 +1,6 @@
+{"ts": "2025-08-15T03:54:04.587738+00:00", "event": "scan_complete", "files": 4, "chunks": 337, "collection": "qaecore_noetic_v1", "dry_run": false}
+{"ts": "2025-08-15T03:54:04.588415+00:00", "event": "embed:start", "chunks": 337}
+{"ts": "2025-08-15T03:55:27.487713+00:00", "event": "embed:end", "duration_ms": 82910.06, "status": "ok"}
+{"ts": "2025-08-15T03:55:27.488292+00:00", "event": "upsert:start", "chunks": 337}
+{"ts": "2025-08-15T03:55:35.688850+00:00", "event": "upsert:end", "duration_ms": 8201.606, "status": "ok"}
+{"ts": "2025-08-15T03:55:35.689483+00:00", "event": "chunks_indexed", "value": 337, "collection": "qaecore_noetic_v1"}

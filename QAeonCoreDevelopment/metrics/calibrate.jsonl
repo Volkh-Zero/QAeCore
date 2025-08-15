@@ -1,0 +1,127 @@
+{"ts": "2025-08-15T05:11:25.171212+00:00", "event": "start", "sample": 120, "folder": "C:\\Users\\kayno\\QAeCore\\QAeonCoreDevelopment\\quantum_aeon_fluxor\\hermetic_engine__persistent_data\\Aeonic_Aura(RawData)\\ChatFiles"}
+{"ts": "2025-08-15T05:11:27.382993+00:00", "event": "embed_batch", "duration_ms": 2210.026, "batch_size": 8}
+{"ts": "2025-08-15T05:11:27.396656+00:00", "event": "embed_batch", "duration_ms": 2222.987, "batch_size": 8}
+{"ts": "2025-08-15T05:11:27.519986+00:00", "event": "embed_batch", "duration_ms": 2345.437, "batch_size": 8}
+{"ts": "2025-08-15T05:11:27.578664+00:00", "event": "embed_batch", "duration_ms": 2403.246, "batch_size": 8}
+{"ts": "2025-08-15T05:11:27.608244+00:00", "event": "embed_batch", "duration_ms": 2435.823, "batch_size": 8}
+{"ts": "2025-08-15T05:11:27.636303+00:00", "event": "embed_batch", "duration_ms": 2462.146, "batch_size": 8}
+{"ts": "2025-08-15T05:11:29.476036+00:00", "event": "embed_batch", "duration_ms": 2092.358, "batch_size": 8}
+{"ts": "2025-08-15T05:11:29.522097+00:00", "event": "embed_batch", "duration_ms": 2001.541, "batch_size": 8}
+{"ts": "2025-08-15T05:11:29.530501+00:00", "event": "embed_batch", "duration_ms": 2133.296, "batch_size": 8}
+{"ts": "2025-08-15T05:11:29.567450+00:00", "event": "embed_batch", "duration_ms": 1988.182, "batch_size": 8}
+{"ts": "2025-08-15T05:11:29.609443+00:00", "event": "embed_batch", "duration_ms": 2000.585, "batch_size": 8}
+{"ts": "2025-08-15T05:11:29.689049+00:00", "event": "embed_batch", "duration_ms": 2052.129, "batch_size": 8}
+{"ts": "2025-08-15T05:11:31.507065+00:00", "event": "embed_batch", "duration_ms": 2030.5, "batch_size": 8}
+{"ts": "2025-08-15T05:11:31.508305+00:00", "event": "embed_batch", "duration_ms": 1976.774, "batch_size": 8}
+{"ts": "2025-08-15T05:11:31.526126+00:00", "event": "embed_batch", "duration_ms": 1995.316, "batch_size": 8}
+{"ts": "2025-08-15T05:11:31.532408+00:00", "event": "result", "batch_size": 8, "workers": 6, "batches": 15, "total_ms": 6355.93, "mean_batch_ms": 2156.69, "median_batch_ms": 2092.36, "p95_batch_ms": 2435.82, "throughput_chunks_per_s": 18.88, "stddev_batch_ms": 171.59}
+{"ts": "2025-08-15T05:11:35.475920+00:00", "event": "embed_batch", "duration_ms": 3941.419, "batch_size": 16}
+{"ts": "2025-08-15T05:11:35.493046+00:00", "event": "embed_batch", "duration_ms": 3957.642, "batch_size": 16}
+{"ts": "2025-08-15T05:11:35.504658+00:00", "event": "embed_batch", "duration_ms": 3968.855, "batch_size": 16}
+{"ts": "2025-08-15T05:11:35.487578+00:00", "event": "embed_batch", "duration_ms": 3952.593, "batch_size": 16}
+{"ts": "2025-08-15T05:11:35.580452+00:00", "event": "embed_batch", "duration_ms": 4047.352, "batch_size": 16}
+{"ts": "2025-08-15T05:11:35.591851+00:00", "event": "embed_batch", "duration_ms": 4057.964, "batch_size": 16}
+{"ts": "2025-08-15T05:11:37.390680+00:00", "event": "embed_batch", "duration_ms": 1884.002, "batch_size": 8}
+{"ts": "2025-08-15T05:11:39.453802+00:00", "event": "embed_batch", "duration_ms": 3948.023, "batch_size": 16}
+{"ts": "2025-08-15T05:11:39.467074+00:00", "event": "result", "batch_size": 16, "workers": 6, "batches": 8, "total_ms": 7922.69, "mean_batch_ms": 3719.73, "median_batch_ms": 3957.64, "p95_batch_ms": 4047.35, "throughput_chunks_per_s": 15.15, "stddev_batch_ms": 695.14}
+{"ts": "2025-08-15T05:11:45.340848+00:00", "event": "embed_batch", "duration_ms": 5871.004, "batch_size": 24}
+{"ts": "2025-08-15T05:11:47.351105+00:00", "event": "embed_batch", "duration_ms": 7883.275, "batch_size": 32}
+{"ts": "2025-08-15T05:11:47.406138+00:00", "event": "embed_batch", "duration_ms": 7936.763, "batch_size": 32}
+{"ts": "2025-08-15T05:11:47.420998+00:00", "event": "embed_batch", "duration_ms": 7952.338, "batch_size": 32}
+{"ts": "2025-08-15T05:11:47.426488+00:00", "event": "result", "batch_size": 32, "workers": 6, "batches": 4, "total_ms": 7954.61, "mean_batch_ms": 7410.84, "median_batch_ms": 7936.76, "p95_batch_ms": 7936.76, "throughput_chunks_per_s": 15.09, "stddev_batch_ms": 889.4}
+{"ts": "2025-08-15T05:11:47.426773+00:00", "event": "end"}
+{"ts": "2025-08-15T05:15:42.498656+00:00", "event": "start", "sample": 120, "folder": "C:\\Users\\kayno\\QAeCore\\QAeonCoreDevelopment\\quantum_aeon_fluxor\\hermetic_engine__persistent_data\\Aeonic_Aura(RawData)\\ChatFiles"}
+{"ts": "2025-08-15T05:15:44.685275+00:00", "event": "embed_batch", "duration_ms": 2184.964, "batch_size": 8}
+{"ts": "2025-08-15T05:15:44.815941+00:00", "event": "embed_batch", "duration_ms": 2314.461, "batch_size": 8}
+{"ts": "2025-08-15T05:15:44.873705+00:00", "event": "embed_batch", "duration_ms": 2370.772, "batch_size": 8}
+{"ts": "2025-08-15T05:15:44.901017+00:00", "event": "embed_batch", "duration_ms": 2399.027, "batch_size": 8}
+{"ts": "2025-08-15T05:15:45.004733+00:00", "event": "embed_batch", "duration_ms": 2501.477, "batch_size": 8}
+{"ts": "2025-08-15T05:15:45.077494+00:00", "event": "embed_batch", "duration_ms": 2576.781, "batch_size": 8}
+{"ts": "2025-08-15T05:15:45.112512+00:00", "event": "embed_batch", "duration_ms": 2608.949, "batch_size": 8}
+{"ts": "2025-08-15T05:15:45.125026+00:00", "event": "embed_batch", "duration_ms": 2625.229, "batch_size": 8}
+{"ts": "2025-08-15T05:15:46.668626+00:00", "event": "embed_batch", "duration_ms": 1982.733, "batch_size": 8}
+{"ts": "2025-08-15T05:15:46.875436+00:00", "event": "embed_batch", "duration_ms": 2001.166, "batch_size": 8}
+{"ts": "2025-08-15T05:15:46.892983+00:00", "event": "embed_batch", "duration_ms": 2062.266, "batch_size": 8}
+{"ts": "2025-08-15T05:15:46.929034+00:00", "event": "embed_batch", "duration_ms": 2027.483, "batch_size": 8}
+{"ts": "2025-08-15T05:15:47.003192+00:00", "event": "embed_batch", "duration_ms": 1997.769, "batch_size": 8}
+{"ts": "2025-08-15T05:15:47.079486+00:00", "event": "embed_batch", "duration_ms": 2001.428, "batch_size": 8}
+{"ts": "2025-08-15T05:15:47.086198+00:00", "event": "embed_batch", "duration_ms": 1954.328, "batch_size": 8}
+{"ts": "2025-08-15T05:15:47.100469+00:00", "event": "result", "batch_size": 8, "workers": 8, "batches": 15, "total_ms": 4589.22, "mean_batch_ms": 2240.59, "median_batch_ms": 2184.96, "p95_batch_ms": 2608.95, "throughput_chunks_per_s": 26.15, "stddev_batch_ms": 246.91}
+{"ts": "2025-08-15T05:15:47.100958+00:00", "event": "end"}
+{"ts": "2025-08-15T05:16:19.076217+00:00", "event": "start", "sample": 120, "folder": "C:\\Users\\kayno\\QAeCore\\QAeonCoreDevelopment\\quantum_aeon_fluxor\\hermetic_engine__persistent_data\\Aeonic_Aura(RawData)\\ChatFiles"}
+{"ts": "2025-08-15T05:16:21.286787+00:00", "event": "embed_batch", "duration_ms": 2207.514, "batch_size": 8}
+{"ts": "2025-08-15T05:16:21.297152+00:00", "event": "embed_batch", "duration_ms": 2214.236, "batch_size": 8}
+{"ts": "2025-08-15T05:16:21.302756+00:00", "event": "embed_batch", "duration_ms": 2221.354, "batch_size": 8}
+{"ts": "2025-08-15T05:16:21.285011+00:00", "event": "embed_batch", "duration_ms": 2201.482, "batch_size": 8}
+{"ts": "2025-08-15T05:16:21.313582+00:00", "event": "embed_batch", "duration_ms": 2231.479, "batch_size": 8}
+{"ts": "2025-08-15T05:16:21.329366+00:00", "event": "embed_batch", "duration_ms": 2243.776, "batch_size": 8}
+{"ts": "2025-08-15T05:16:21.338821+00:00", "event": "embed_batch", "duration_ms": 2258.305, "batch_size": 8}
+{"ts": "2025-08-15T05:16:21.356156+00:00", "event": "embed_batch", "duration_ms": 2274.309, "batch_size": 8}
+{"ts": "2025-08-15T05:16:21.376187+00:00", "event": "embed_batch", "duration_ms": 2290.848, "batch_size": 8}
+{"ts": "2025-08-15T05:16:21.430143+00:00", "event": "embed_batch", "duration_ms": 2351.716, "batch_size": 8}
+{"ts": "2025-08-15T05:16:23.301990+00:00", "event": "embed_batch", "duration_ms": 1988.096, "batch_size": 8}
+{"ts": "2025-08-15T05:16:23.340204+00:00", "event": "embed_batch", "duration_ms": 2024.542, "batch_size": 8}
+{"ts": "2025-08-15T05:16:23.366151+00:00", "event": "embed_batch", "duration_ms": 2051.445, "batch_size": 8}
+{"ts": "2025-08-15T05:16:23.379241+00:00", "event": "embed_batch", "duration_ms": 2057.328, "batch_size": 8}
+{"ts": "2025-08-15T05:16:23.410052+00:00", "event": "embed_batch", "duration_ms": 2070.814, "batch_size": 8}
+{"ts": "2025-08-15T05:16:23.417106+00:00", "event": "result", "batch_size": 8, "workers": 10, "batches": 15, "total_ms": 4334.48, "mean_batch_ms": 2179.15, "median_batch_ms": 2214.24, "p95_batch_ms": 2290.85, "throughput_chunks_per_s": 27.68, "stddev_batch_ms": 107.11}
+{"ts": "2025-08-15T05:16:23.417652+00:00", "event": "end"}
+{"ts": "2025-08-15T06:10:35.913706+00:00", "event": "start", "sample": 120, "folder": "C:\\Users\\kayno\\QAeCore\\QAeonCoreDevelopment\\quantum_aeon_fluxor\\hermetic_engine__persistent_data\\Aeonic_Aura(RawData)\\ChatFiles"}
+{"ts": "2025-08-15T06:10:37.146858+00:00", "event": "embed_batch", "duration_ms": 1230.369, "batch_size": 4}
+{"ts": "2025-08-15T06:10:37.219021+00:00", "event": "embed_batch", "duration_ms": 1299.669, "batch_size": 4}
+{"ts": "2025-08-15T06:10:37.350992+00:00", "event": "embed_batch", "duration_ms": 1431.995, "batch_size": 4}
+{"ts": "2025-08-15T06:10:37.368741+00:00", "event": "embed_batch", "duration_ms": 1453.041, "batch_size": 4}
+{"ts": "2025-08-15T06:10:37.419877+00:00", "event": "embed_batch", "duration_ms": 1501.287, "batch_size": 4}
+{"ts": "2025-08-15T06:10:37.433052+00:00", "event": "embed_batch", "duration_ms": 1518.049, "batch_size": 4}
+{"ts": "2025-08-15T06:10:37.449379+00:00", "event": "embed_batch", "duration_ms": 1531.749, "batch_size": 4}
+{"ts": "2025-08-15T06:10:37.442272+00:00", "event": "embed_batch", "duration_ms": 1525.235, "batch_size": 4}
+{"ts": "2025-08-15T06:10:38.344178+00:00", "event": "embed_batch", "duration_ms": 1174.912, "batch_size": 4}
+{"ts": "2025-08-15T06:10:38.357759+00:00", "event": "embed_batch", "duration_ms": 1138.187, "batch_size": 4}
+{"ts": "2025-08-15T06:10:38.374717+00:00", "event": "embed_batch", "duration_ms": 1023.125, "batch_size": 4}
+{"ts": "2025-08-15T06:10:38.441713+00:00", "event": "embed_batch", "duration_ms": 1072.357, "batch_size": 4}
+{"ts": "2025-08-15T06:10:38.512345+00:00", "event": "embed_batch", "duration_ms": 1059.422, "batch_size": 4}
+{"ts": "2025-08-15T06:10:38.538381+00:00", "event": "embed_batch", "duration_ms": 1087.907, "batch_size": 4}
+{"ts": "2025-08-15T06:10:38.577275+00:00", "event": "embed_batch", "duration_ms": 1125.151, "batch_size": 4}
+{"ts": "2025-08-15T06:10:38.581684+00:00", "event": "embed_batch", "duration_ms": 1130.437, "batch_size": 4}
+{"ts": "2025-08-15T06:10:39.417338+00:00", "event": "embed_batch", "duration_ms": 1058.255, "batch_size": 4}
+{"ts": "2025-08-15T06:10:39.430957+00:00", "event": "embed_batch", "duration_ms": 1072.655, "batch_size": 4}
+{"ts": "2025-08-15T06:10:39.446833+00:00", "event": "embed_batch", "duration_ms": 1071.616, "batch_size": 4}
+{"ts": "2025-08-15T06:10:39.499716+00:00", "event": "embed_batch", "duration_ms": 1057.521, "batch_size": 4}
+{"ts": "2025-08-15T06:10:39.513028+00:00", "event": "embed_batch", "duration_ms": 1000.204, "batch_size": 4}
+{"ts": "2025-08-15T06:10:39.587679+00:00", "event": "embed_batch", "duration_ms": 1048.795, "batch_size": 4}
+{"ts": "2025-08-15T06:10:39.633164+00:00", "event": "embed_batch", "duration_ms": 1050.084, "batch_size": 4}
+{"ts": "2025-08-15T06:10:39.637473+00:00", "event": "embed_batch", "duration_ms": 1055.187, "batch_size": 4}
+{"ts": "2025-08-15T06:10:40.435279+00:00", "event": "embed_batch", "duration_ms": 1017.388, "batch_size": 4}
+{"ts": "2025-08-15T06:10:40.448591+00:00", "event": "embed_batch", "duration_ms": 1001.306, "batch_size": 4}
+{"ts": "2025-08-15T06:10:40.478201+00:00", "event": "embed_batch", "duration_ms": 1046.686, "batch_size": 4}
+{"ts": "2025-08-15T06:10:40.527469+00:00", "event": "embed_batch", "duration_ms": 1013.886, "batch_size": 4}
+{"ts": "2025-08-15T06:10:40.543852+00:00", "event": "embed_batch", "duration_ms": 1029.529, "batch_size": 4}
+{"ts": "2025-08-15T06:10:40.590261+00:00", "event": "embed_batch", "duration_ms": 1002.135, "batch_size": 4}
+{"ts": "2025-08-15T06:10:40.598875+00:00", "event": "result", "batch_size": 4, "workers": 8, "batches": 30, "total_ms": 4677.4, "mean_batch_ms": 1160.94, "median_batch_ms": 1072.36, "p95_batch_ms": 1518.05, "throughput_chunks_per_s": 25.66, "stddev_batch_ms": 179.26}
+{"ts": "2025-08-15T06:10:42.555521+00:00", "event": "embed_batch", "duration_ms": 1953.359, "batch_size": 8}
+{"ts": "2025-08-15T06:10:42.565044+00:00", "event": "embed_batch", "duration_ms": 1963.575, "batch_size": 8}
+{"ts": "2025-08-15T06:10:42.592565+00:00", "event": "embed_batch", "duration_ms": 1992.052, "batch_size": 8}
+{"ts": "2025-08-15T06:10:42.658075+00:00", "event": "embed_batch", "duration_ms": 2055.565, "batch_size": 8}
+{"ts": "2025-08-15T06:10:42.644581+00:00", "event": "embed_batch", "duration_ms": 2043.52, "batch_size": 8}
+{"ts": "2025-08-15T06:10:42.681168+00:00", "event": "embed_batch", "duration_ms": 2078.296, "batch_size": 8}
+{"ts": "2025-08-15T06:10:42.688047+00:00", "event": "embed_batch", "duration_ms": 2088.312, "batch_size": 8}
+{"ts": "2025-08-15T06:10:42.744560+00:00", "event": "embed_batch", "duration_ms": 2142.763, "batch_size": 8}
+{"ts": "2025-08-15T06:10:44.504979+00:00", "event": "embed_batch", "duration_ms": 1938.855, "batch_size": 8}
+{"ts": "2025-08-15T06:10:44.514242+00:00", "event": "embed_batch", "duration_ms": 1947.091, "batch_size": 8}
+{"ts": "2025-08-15T06:10:44.524643+00:00", "event": "embed_batch", "duration_ms": 1931.528, "batch_size": 8}
+{"ts": "2025-08-15T06:10:44.698891+00:00", "event": "embed_batch", "duration_ms": 2010.747, "batch_size": 8}
+{"ts": "2025-08-15T06:10:44.692426+00:00", "event": "embed_batch", "duration_ms": 2033.697, "batch_size": 8}
+{"ts": "2025-08-15T06:10:44.726750+00:00", "event": "embed_batch", "duration_ms": 2037.676, "batch_size": 8}
+{"ts": "2025-08-15T06:10:44.716568+00:00", "event": "embed_batch", "duration_ms": 2057.023, "batch_size": 8}
+{"ts": "2025-08-15T06:10:44.734916+00:00", "event": "result", "batch_size": 8, "workers": 8, "batches": 15, "total_ms": 4128.95, "mean_batch_ms": 2018.27, "median_batch_ms": 2033.7, "p95_batch_ms": 2088.31, "throughput_chunks_per_s": 29.06, "stddev_batch_ms": 60.55}
+{"ts": "2025-08-15T06:10:46.824801+00:00", "event": "embed_batch", "duration_ms": 2084.73, "batch_size": 8}
+{"ts": "2025-08-15T06:10:48.620594+00:00", "event": "embed_batch", "duration_ms": 3882.846, "batch_size": 16}
+{"ts": "2025-08-15T06:10:48.744144+00:00", "event": "embed_batch", "duration_ms": 4008.233, "batch_size": 16}
+{"ts": "2025-08-15T06:10:48.786949+00:00", "event": "embed_batch", "duration_ms": 4048.602, "batch_size": 16}
+{"ts": "2025-08-15T06:10:48.801969+00:00", "event": "embed_batch", "duration_ms": 4062.441, "batch_size": 16}
+{"ts": "2025-08-15T06:10:48.815782+00:00", "event": "embed_batch", "duration_ms": 4076.563, "batch_size": 16}
+{"ts": "2025-08-15T06:10:48.856800+00:00", "event": "embed_batch", "duration_ms": 4120.124, "batch_size": 16}
+{"ts": "2025-08-15T06:10:48.900313+00:00", "event": "embed_batch", "duration_ms": 4163.099, "batch_size": 16}
+{"ts": "2025-08-15T06:10:48.908257+00:00", "event": "result", "batch_size": 16, "workers": 8, "batches": 8, "total_ms": 4166.75, "mean_batch_ms": 3805.83, "median_batch_ms": 4062.44, "p95_batch_ms": 4120.12, "throughput_chunks_per_s": 28.8, "stddev_batch_ms": 655.13}
+{"ts": "2025-08-15T06:10:48.908662+00:00", "event": "end"}
+{"ts": "2025-08-15T06:10:48.914369+00:00", "event": "recommendation", "batch_size": 8, "workers": 8, "throughput_chunks_per_s": 29.06, "mean_batch_ms": 2018.27, "stddev_batch_ms": 60.55, "median_batch_ms": 2033.7, "p95_batch_ms": 2088.31, "sample": 120, "generated_at": "2025-08-15T06:10:48Z", "strategy": "throughput_then_stability", "chunk_size": 2500, "overlap": 200, "dataset_hash": "a15dc53e941318eabe970a0feecb30e673a5b2c2", "success": true, "age_days_previous": null, "force_retune": false, "run_id": "ffb48cd8fcc1"}

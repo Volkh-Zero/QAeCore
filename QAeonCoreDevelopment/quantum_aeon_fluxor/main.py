@@ -2,6 +2,7 @@ import os
 import sys
 import importlib.util
 import argparse
+from quantum_aeon_fluxor import __version__
 import google.generativeai as genai
 from google.generativeai.types import HarmCategory, HarmBlockThreshold, GenerationConfig
 from google.generativeai.protos import SafetySetting
@@ -159,7 +160,12 @@ def main():
         default='basic',
         help="The mode to run the script in: 'basic' for a single prompt, 'demo' for the QAeCore showcase. (default: basic)"
     )
+    parser.add_argument('--version', action='store_true', help='Print version and exit')
     args = parser.parse_args()
+
+    if args.version:
+        print(f"quantum-aeon-fluxor version {__version__}")
+        return
 
     api_key = os.getenv("GOOGLE_API_KEY")
     model = _initialize_model(api_key)

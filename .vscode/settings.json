@@ -54,6 +54,6 @@
     "powershell.startupScript": "${workspaceFolder}/scripts/project_profile.ps1",
     "terminal.integrated.enablePersistentSessions": false,
     "CodeGPT.apiKey": "Google AI Studio",
-    "markdown.validate.enabled": true
+    "markdown.validate.enabled": false
     // (Windows-only project configuration; Linux profiles removed)
 }

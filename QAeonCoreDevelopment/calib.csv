@@ -1,0 +1,2 @@
+batch,workers,batches,total_ms,mean_batch_ms,median_batch_ms,p95_batch_ms,stddev_batch_ms,throughput_chunks_per_s
+8,10,15,4334.48,2179.15,2214.24,2290.85,107.11,27.68

@@ -1,0 +1,13 @@
+[
+  {
+    "batch_size": 8,
+    "workers": 10,
+    "batches": 15,
+    "total_ms": 4334.48,
+    "mean_batch_ms": 2179.15,
+    "median_batch_ms": 2214.24,
+    "p95_batch_ms": 2290.85,
+    "throughput_chunks_per_s": 27.68,
+    "stddev_batch_ms": 107.11
+  }
+]
