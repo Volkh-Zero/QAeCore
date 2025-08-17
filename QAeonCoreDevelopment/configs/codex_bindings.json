@@ -1,0 +1,65 @@
+{
+  "mandates": {
+    "participatory_inquiry": {
+      "module": "archon__supervisor_agent",
+      "cli": "qaf-cli conversation",
+      "notes": "Two-way REPL; co-state updates; focus topic control"
+    },
+    "ethical_agnosticism": {
+      "module": "syzygy__conversational_framework",
+      "file": "qacore_prompt_engine.py",
+      "notes": "Moral/ethical stance injected via configurable kernel inputs"
+    },
+    "productive_ambiguity": {
+      "module": "syzygy__conversational_framework",
+      "file": "bridge.py",
+      "notes": "Preserves open hypotheses; no forced resolution"
+    },
+    "bias_mitigation": {
+      "module": "archon__supervisor_agent/state.py",
+      "notes": "bias_flags field; hook into metrics for detection"
+    },
+    "substrate_acknowledgment": {
+      "module": "archon__supervisor_agent/state.py",
+      "notes": "Metadata tagging for substrate/source context"
+    },
+    "novel_hypothesis_seeking": {
+      "cli": ":insight",
+      "notes": "Registers InsightCandidate into persistent state"
+    },
+    "inter_domain_coherence": {
+      "module": "syzygy ↔ hermetic_engine integration",
+      "notes": "Multi-collection retrieval merge via Archon"
+    }
+  },
+  "modes": {
+    "analyst": "qaf-search CLI on active collection",
+    "architect": "Modular repo layout; distinct API surfaces",
+    "chronicler": "memory_logger.py + longterm.py blob store",
+    "catalyst": "qaf-ingest auto-tuning pipeline",
+    "oracle": "Archon REPL with retrieval + reasoning strategy"
+  },
+  "domains": {
+    "foundations": "syzygy__conversational_framework",
+    "cosmic_history": "myth_map.json + display.py",
+    "complexity": "pleroma__reasoning strategies",
+    "consequences": "Prompt kernel ethics hooks + bias flags",
+    "neuroscience": "Hermetic Engine data substrate maps",
+    "super_ethics": "Ethics Engine placeholder in Syzygy",
+    "psychology": "Conversational state logging",
+    "technology": "Qdrant + Gemini embedding/retrieval stack"
+  },
+  "persistence_layer": {
+    "living_bibliography": "Qdrant collections (qaecore_*)",
+    "context_awareness": "Archon state + retrieval merge",
+    "recursive_improvements": ".qaf_tuning.json evolution",
+    "recorded_history": "episodic logs + metrics streams"
+  },
+  "runtime_flow": [
+    "parse_signal",
+    "route_to_domain",
+    "apply_mandate_constraints",
+    "persist_or_index",
+    "return_doctrine_enriched_output"
+  ]
+}
