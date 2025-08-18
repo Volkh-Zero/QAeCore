@@ -167,7 +167,7 @@ Notes:
 - Responses and user turns are logged to the episodic transcript by default.
 - Conversational embeddings go to `qaecore_conversations_v1` by default with metadata: `session`, `role`, `turn_index`, `focus_topic`, and a short `text` snippet.
 
-- State: [archon_state.json](file:///c:/Users/kayno/QAeCore/QAeonCoreDevelopment/quantum_aeon_fluxor/hermetic_engine__persistent_data) is auto-saved.
+- State: archon_state.json (canonical: hermetic_engine__persistent_data/Mnemosyne_Engine(State_Machine)/state/, legacy auto-migrated from hermetic_engine__persistent_data/state/) is auto-saved.
   - Fields: `phase`, `focus_topic`, `open_questions`, `working_hypotheses`, `contradictions`, `bias_flags`, `insight_candidates`
 - Transcript: episodic logs via `episodic_log_interaction(speaker, text)` in [memory_logger.py](file:///c:/Users/kayno/QAeCore/QAeonCoreDevelopment/quantum_aeon_fluxor/hermetic_engine__persistent_data/emergent_chironomicon__coherent_vectors/memory_logger.py)
 - Long-term blobs: `write_blob(blob, tags, meta)` in [longterm.py](file:///c:/Users/kayno/QAeCore/QAeonCoreDevelopment/quantum_aeon_fluxor/hermetic_engine__persistent_data/longterm.py)
