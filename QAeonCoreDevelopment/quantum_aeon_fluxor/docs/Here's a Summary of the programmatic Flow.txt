@@ -8,7 +8,7 @@ It constructs the Archon and starts the REPL loop.
 Archon initialization
 
 Class: archon.py
-Loads state from disk: state.py (JSON at hermetic_engine__persistent_data/state/archon_state.json)
+Loads state from disk: state.py (JSON at hermetic_engine__persistent_data/Mnemosyne_Engine(State_Machine)/state/archon_state.json)
 Instantiates Gemini LLM client: GeminiClient.py (reads GOOGLE_API_KEY; find_dotenv used so your top-level .env works)
 Initializes retrieval controls (single or multi-collection), and conversational embedding settings.
 Each REPL turn

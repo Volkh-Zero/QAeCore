@@ -1,0 +1,7 @@
+{"ts": "2025-08-17T07:53:44.475578+00:00", "event": "query", "duration_ms": 34320.24, "ok": true, "chars": 2208}
+{"ts": "2025-08-17T08:21:38.466843+00:00", "event": "query", "duration_ms": 41403.58, "ok": true, "chars": 6370}
+{"ts": "2025-08-17T08:23:59.661554+00:00", "event": "query", "duration_ms": 38802.31, "ok": true, "chars": 2280}
+{"ts": "2025-08-17T08:28:11.066829+00:00", "event": "query", "duration_ms": 30662.92, "ok": true, "chars": 2010}
+{"ts": "2025-08-17T08:43:31.861502+00:00", "event": "query", "duration_ms": 40527.4, "ok": true, "chars": 4676}
+{"ts": "2025-08-17T09:05:31.347628+00:00", "event": "query", "duration_ms": 35687.88, "ok": true, "chars": 4874}
+{"ts": "2025-08-17T10:01:22.686089+00:00", "event": "query", "duration_ms": 37084.26, "ok": true, "chars": 3131}

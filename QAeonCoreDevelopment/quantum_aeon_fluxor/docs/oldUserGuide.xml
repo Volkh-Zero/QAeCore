@@ -140,7 +140,7 @@
     </CLI>
 
     <Archon>
-        <State file='hermetic_engine__persistent_data/state/archon_state.json'>
+    <State file='hermetic_engine__persistent_data/Mnemosyne_Engine(State_Machine)/state/archon_state.json' legacy='hermetic_engine__persistent_data/state/archon_state.json'>
             <Field>phase</Field>
 
             <Field>focus_topic</Field>

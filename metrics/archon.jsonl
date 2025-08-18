@@ -1,0 +1,70 @@
+{"ts": "2025-08-17T07:53:10.146002+00:00", "event": "retrieval_done", "collections": ["qaecore_library_v1"], "total_candidates": 3, "top_k": 3}
+{"ts": "2025-08-17T07:53:10.149716+00:00", "event": "retrieval_latency", "duration_ms": 2206.06}
+{"ts": "2025-08-17T07:53:10.151352+00:00", "event": "compose_prompt:start"}
+{"ts": "2025-08-17T07:53:10.153874+00:00", "event": "compose_prompt:end", "duration_ms": 2.514, "status": "ok"}
+{"ts": "2025-08-17T07:53:10.154541+00:00", "event": "model_query:start"}
+{"ts": "2025-08-17T07:53:44.477144+00:00", "event": "model_query:end", "duration_ms": 34322.389, "status": "ok"}
+{"ts": "2025-08-17T07:53:44.479198+00:00", "event": "turn_completed", "value": 1}
+{"ts": "2025-08-17T07:53:44.481935+00:00", "event": "state_save:start"}
+{"ts": "2025-08-17T07:53:44.482958+00:00", "event": "state_save:end", "duration_ms": 1.017, "status": "ok"}
+{"ts": "2025-08-17T07:53:44.483320+00:00", "event": "turn_persisted", "focus_topic": "Test inquiry about emergence and consciousness", "insights": 0}
+{"ts": "2025-08-17T08:20:57.058053+00:00", "event": "retrieval_done", "collections": ["qaecore_library_v1"], "total_candidates": 3, "top_k": 3}
+{"ts": "2025-08-17T08:20:57.060381+00:00", "event": "retrieval_latency", "duration_ms": 1337.39}
+{"ts": "2025-08-17T08:20:57.061316+00:00", "event": "compose_prompt:start"}
+{"ts": "2025-08-17T08:20:57.062294+00:00", "event": "compose_prompt:end", "duration_ms": 0.974, "status": "ok"}
+{"ts": "2025-08-17T08:20:57.062655+00:00", "event": "model_query:start"}
+{"ts": "2025-08-17T08:21:38.468170+00:00", "event": "model_query:end", "duration_ms": 41405.261, "status": "ok"}
+{"ts": "2025-08-17T08:21:38.469045+00:00", "event": "turn_completed", "value": 1}
+{"ts": "2025-08-17T08:21:38.472898+00:00", "event": "state_save:start"}
+{"ts": "2025-08-17T08:21:38.474372+00:00", "event": "state_save:end", "duration_ms": 1.468, "status": "ok"}
+{"ts": "2025-08-17T08:21:38.475024+00:00", "event": "turn_persisted", "focus_topic": "Test inquiry about emergence and consciousness", "insights": 0}
+{"ts": "2025-08-17T08:23:20.856606+00:00", "event": "retrieval_done", "collections": ["qaecore_library_v1"], "total_candidates": 3, "top_k": 3}
+{"ts": "2025-08-17T08:23:20.857182+00:00", "event": "retrieval_latency", "duration_ms": 1409.74}
+{"ts": "2025-08-17T08:23:20.857561+00:00", "event": "compose_prompt:start"}
+{"ts": "2025-08-17T08:23:20.858216+00:00", "event": "compose_prompt:end", "duration_ms": 0.651, "status": "ok"}
+{"ts": "2025-08-17T08:23:20.858618+00:00", "event": "model_query:start"}
+{"ts": "2025-08-17T08:23:59.663751+00:00", "event": "model_query:end", "duration_ms": 38804.89, "status": "ok"}
+{"ts": "2025-08-17T08:23:59.664922+00:00", "event": "turn_completed", "value": 1}
+{"ts": "2025-08-17T08:24:01.874476+00:00", "event": "state_save:start"}
+{"ts": "2025-08-17T08:24:01.875526+00:00", "event": "state_save:end", "duration_ms": 1.046, "status": "ok"}
+{"ts": "2025-08-17T08:24:01.875904+00:00", "event": "turn_persisted", "focus_topic": "Test inquiry about emergence and consciousness", "insights": 0}
+{"ts": "2025-08-17T08:27:40.400021+00:00", "event": "retrieval_done", "collections": ["qaecore_conversations_v1"], "total_candidates": 2, "top_k": 2}
+{"ts": "2025-08-17T08:27:40.401002+00:00", "event": "retrieval_latency", "duration_ms": 1239.93}
+{"ts": "2025-08-17T08:27:40.401749+00:00", "event": "compose_prompt:start"}
+{"ts": "2025-08-17T08:27:40.402559+00:00", "event": "compose_prompt:end", "duration_ms": 0.804, "status": "ok"}
+{"ts": "2025-08-17T08:27:40.403172+00:00", "event": "model_query:start"}
+{"ts": "2025-08-17T08:28:11.068058+00:00", "event": "model_query:end", "duration_ms": 30664.695, "status": "ok"}
+{"ts": "2025-08-17T08:28:11.068678+00:00", "event": "turn_completed", "value": 1}
+{"ts": "2025-08-17T08:28:12.736502+00:00", "event": "state_save:start"}
+{"ts": "2025-08-17T08:28:12.741207+00:00", "event": "state_save:end", "duration_ms": 4.696, "status": "ok"}
+{"ts": "2025-08-17T08:28:12.743140+00:00", "event": "turn_persisted", "focus_topic": "Test inquiry about emergence and consciousness", "insights": 0}
+{"ts": "2025-08-17T08:42:51.330439+00:00", "event": "retrieval_done", "collections": ["qaecore_conversations_v1"], "total_candidates": 3, "top_k": 3}
+{"ts": "2025-08-17T08:42:51.331211+00:00", "event": "retrieval_latency", "duration_ms": 1359.03}
+{"ts": "2025-08-17T08:42:51.331776+00:00", "event": "compose_prompt:start"}
+{"ts": "2025-08-17T08:42:51.332554+00:00", "event": "compose_prompt:end", "duration_ms": 0.773, "status": "ok"}
+{"ts": "2025-08-17T08:42:51.333165+00:00", "event": "model_query:start"}
+{"ts": "2025-08-17T08:43:31.864647+00:00", "event": "model_query:end", "duration_ms": 40531.216, "status": "ok"}
+{"ts": "2025-08-17T08:43:31.866561+00:00", "event": "turn_completed", "value": 1}
+{"ts": "2025-08-17T08:43:33.625556+00:00", "event": "state_save:start"}
+{"ts": "2025-08-17T08:43:33.626751+00:00", "event": "state_save:end", "duration_ms": 1.191, "status": "ok"}
+{"ts": "2025-08-17T08:43:33.627177+00:00", "event": "turn_persisted", "focus_topic": "Test inquiry about emergence and consciousness", "insights": 0}
+{"ts": "2025-08-17T09:04:55.652732+00:00", "event": "retrieval_done", "collections": ["qaecore_conversations_v1"], "total_candidates": 3, "top_k": 3}
+{"ts": "2025-08-17T09:04:55.655016+00:00", "event": "retrieval_latency", "duration_ms": 1338.97}
+{"ts": "2025-08-17T09:04:55.656333+00:00", "event": "compose_prompt:start"}
+{"ts": "2025-08-17T09:04:55.657750+00:00", "event": "compose_prompt:end", "duration_ms": 1.407, "status": "ok"}
+{"ts": "2025-08-17T09:04:55.658694+00:00", "event": "model_query:start"}
+{"ts": "2025-08-17T09:05:31.352926+00:00", "event": "model_query:end", "duration_ms": 35693.998, "status": "ok"}
+{"ts": "2025-08-17T09:05:31.353876+00:00", "event": "turn_completed", "value": 1}
+{"ts": "2025-08-17T09:05:33.141160+00:00", "event": "state_save:start"}
+{"ts": "2025-08-17T09:05:33.142214+00:00", "event": "state_save:end", "duration_ms": 1.051, "status": "ok"}
+{"ts": "2025-08-17T09:05:33.142572+00:00", "event": "turn_persisted", "focus_topic": "Test inquiry about emergence and consciousness", "insights": 0}
+{"ts": "2025-08-17T10:00:45.596889+00:00", "event": "retrieval_done", "collections": ["qaecore_conversations_v1"], "total_candidates": 3, "top_k": 3}
+{"ts": "2025-08-17T10:00:45.598712+00:00", "event": "retrieval_latency", "duration_ms": 1263.19}
+{"ts": "2025-08-17T10:00:45.599592+00:00", "event": "compose_prompt:start"}
+{"ts": "2025-08-17T10:00:45.600518+00:00", "event": "compose_prompt:end", "duration_ms": 0.911, "status": "ok"}
+{"ts": "2025-08-17T10:00:45.601078+00:00", "event": "model_query:start"}
+{"ts": "2025-08-17T10:01:22.686540+00:00", "event": "model_query:end", "duration_ms": 37085.24, "status": "ok"}
+{"ts": "2025-08-17T10:01:22.687048+00:00", "event": "turn_completed", "value": 1}
+{"ts": "2025-08-17T10:01:24.490279+00:00", "event": "state_save:start"}
+{"ts": "2025-08-17T10:01:24.493611+00:00", "event": "state_save:end", "duration_ms": 3.326, "status": "ok"}
+{"ts": "2025-08-17T10:01:24.494487+00:00", "event": "turn_persisted", "focus_topic": "Test inquiry about emergence and consciousness", "insights": 0}
